@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Categories | Drēbes Sourcing Company</title>
+  <meta name="description" content="Explore Drēbes Sourcing's 14 individual product categories: Denim, Woven Apparel, Knitwear, T-Shirts, Polo Shirts, Sweatshirts & Hoodies, Jackets, Outerwear, Sweaters, Uniforms, Workwear, Children's Wear, Convocation Gowns, and Promotional Apparel.">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
+</head>
+<body>
+
+  <!-- HEADER NAVIGATION -->
+  <header class="header" id="header">
+    <div class="header-top-bar">
+      <!-- LEFT: BIG OFFICIAL LOGO -->
+      <div class="header-brand">
+        <a href="index.html" class="logo-link" aria-label="Drēbes Sourcing Company Logo">
+          <img src="assets/logo.png" alt="Drēbes Sourcing Company Logo" class="logo-img">
+        </a>
+      </div>
+
+      <!-- CENTER: MINIMALIST DASH ICON (=) NO BORDER NO RADIUS -->
+      <div class="header-center-nav">
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- RIGHT: ICON-ONLY THEME TOGGLE -->
+      <div class="header-right-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+          <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- UNIVERSAL BREADCRUMB POP-DOWN DRAWER -->
+    <nav class="nav-menu breadcrumb-nav" id="nav-menu">
+      <div class="nav-item-wrapper"><a href="index.html" class="nav-link">HOME</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="about.html" class="nav-link">ABOUT US</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="services.html" class="nav-link">OUR SERVICES</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="design-studio.html" class="nav-link">DESIGN STUDIO</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="categories.html" class="nav-link active">PRODUCT CATEGORIES</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="why-us.html" class="nav-link">WHY DRĒBES</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="process.html" class="nav-link">OUR PROCESS</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="sustainability.html" class="nav-link">SUSTAINABILITY</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="global-presence.html" class="nav-link">GLOBAL PRESENCE</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="contact.html" class="nav-link">CONTACT</a></div>
+    </nav>
+  </header>
+
+  <!-- 100VW EDGE-TO-EDGE FULL BLEED HERO BANNER -->
+  <section class="subpage-hero-fullbleed page-top-offset">
+    <div class="subpage-hero-bg">
+      <img src="assets/categories_hero.jpg" alt="PRODUCT CATEGORIES Hero Background">
+    </div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content">
+      <span class="subpage-hero-category">GARMENT PORTFOLIO</span>
+      <h1 class="subpage-hero-title">PRODUCT CATEGORIES</h1>
+      <p class="subpage-hero-desc">Explore our 12 distinct apparel manufacturing categories below.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORY TABBED PORTFOLIO SHOWCASE MAIN CONTAINER -->
+  <main class="container" style="padding-bottom: 6rem;">
+
+    <!-- TOP HORIZONTAL 12 UNMIXED CATEGORY TAB BUTTONS -->
+    <div class="category-tabs-container">
+      <button class="category-tab-btn active" data-target="cat-denim">Denim</button>
+      <button class="category-tab-btn" data-target="cat-woven">Woven Apparel</button>
+      <button class="category-tab-btn" data-target="cat-knitwear">Knitwear</button>
+      <button class="category-tab-btn" data-target="cat-tshirts">T-Shirts</button>
+      <button class="category-tab-btn" data-target="cat-sweatshirts">Sweatshirts & Hoodies</button>
+      <button class="category-tab-btn" data-target="cat-jackets">Jackets</button>
+      <button class="category-tab-btn" data-target="cat-outerwear">Outerwear</button>
+      <button class="category-tab-btn" data-target="cat-uniforms">Uniforms</button>
+      <button class="category-tab-btn" data-target="cat-workwear">Workwear</button>
+      <button class="category-tab-btn" data-target="cat-children">Children's Wear</button>
+      <button class="category-tab-btn" data-target="cat-convocation">Convocation Gowns</button>
+      <button class="category-tab-btn" data-target="cat-promotional">Promotional Apparel</button>
+    </div>
+
+    <!-- 1. DENIM -->
+    <section class="portfolio-division-block active" id="cat-denim">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.01 // DENIM DIVISION</span>
+        <h2 class="division-title">DENIM PORTFOLIO</h2>
+        <p class="division-desc">Raw selvedge denim, comfort stretch jeans, denim trucker jackets, shorts, skirts, and vintage washed apparel. Options include eco-friendly ozone washing, laser distressing, and recycled denim fabrics.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_denim.jpg" alt="Denim Collection Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Denim Collection - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_denim.jpg" alt="Denim Collection Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Denim Collection - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_denim.jpg" alt="Denim Collection Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Denim Collection - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 2. WOVEN APPAREL -->
+    <section class="portfolio-division-block" id="cat-woven">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.02 // WOVEN DIVISION</span>
+        <h2 class="division-title">WOVEN APPAREL PORTFOLIO</h2>
+        <p class="division-desc">Tailored blazers, formal trousers, poplin dress shirts, cargo pants, and casual chinos built with precision seam engineering and premium cotton twills and poplins.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_woven.jpg" alt="Woven Apparel Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Woven Apparel - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_woven.jpg" alt="Woven Apparel Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Woven Apparel - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_woven.jpg" alt="Woven Apparel Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Woven Apparel - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 3. KNITWEAR -->
+    <section class="portfolio-division-block" id="cat-knitwear">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.03 // KNIT DIVISION</span>
+        <h2 class="division-title">KNITWEAR PORTFOLIO</h2>
+        <p class="division-desc">Precision extra-fine Cotton combed compact yarn, cotton-spandex, polyester-spandex, Nylon-spandex, viscose oekotex and GOTS certified made of jersey, rib, interlock, pique, lacoste, french terry, fleece, ripstop, thermal, honey comb fabrics shells.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_knitwear.jpg" alt="Premium Knitwear Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Premium Knitwear - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_knitwear.jpg" alt="Premium Knitwear Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Premium Knitwear - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_knitwear.jpg" alt="Premium Knitwear Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Premium Knitwear - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 4. T-SHIRTS -->
+    <section class="portfolio-division-block" id="cat-tshirts">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.04 // T-SHIRT DIVISION</span>
+        <h2 class="division-title">T-SHIRTS PORTFOLIO</h2>
+        <p class="division-desc">Heavyweight 240+ GSM boxy tees, streetwear oversized t-shirts, graphic tees, slub cotton basics, and vintage garment-dyed crewnecks with high-density screen printing.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_tshirts.jpg" alt="Cotton T-Shirts Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Cotton T-Shirts - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_tshirts.jpg" alt="Cotton T-Shirts Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Cotton T-Shirts - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_tshirts.jpg" alt="Cotton T-Shirts Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Cotton T-Shirts - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+    <!-- 6. SWEATSHIRTS & HOODIES -->
+    <section class="portfolio-division-block" id="cat-sweatshirts">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.06 // HOODIE & FLEECE DIVISION</span>
+        <h2 class="division-title">SWEATSHIRTS & HOODIES PORTFOLIO</h2>
+        <p class="division-desc">400+ GSM heavy fleece hoodies, crewnecks, zip-up hoodies, raglan sleeves, fleece joggers, double-layered hoods, and thick cotton drawstrings.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_sweatshirts.jpg" alt="Sweatshirts & Hoodies Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Sweatshirts & Hoodies - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_sweatshirts.jpg" alt="Sweatshirts & Hoodies Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Sweatshirts & Hoodies - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_sweatshirts.jpg" alt="Sweatshirts & Hoodies Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Sweatshirts & Hoodies - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 7. JACKETS -->
+    <section class="portfolio-division-block" id="cat-jackets">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.07 // JACKET DIVISION</span>
+        <h2 class="division-title">JACKETS PORTFOLIO</h2>
+        <p class="division-desc">Bomber jackets, utility field jackets, varsity jackets with leather sleeves, quilted thermal liners, and lightweight nylon ripstop track jackets.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_jackets.jpg" alt="Custom Jackets Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Custom Jackets - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_jackets.jpg" alt="Custom Jackets Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Custom Jackets - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_jackets.jpg" alt="Custom Jackets Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Custom Jackets - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 8. OUTERWEAR -->
+    <section class="portfolio-division-block" id="cat-outerwear">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.08 // OUTERWEAR DIVISION</span>
+        <h2 class="division-title">OUTERWEAR PORTFOLIO</h2>
+        <p class="division-desc">Technical 10,000mm waterproof parkas, 700+ fill power duck down coats, seam-sealed trench coats, windproof shell jackets, and winter overcoats.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_outerwear.jpg" alt="Performance Outerwear Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Performance Outerwear - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_outerwear.jpg" alt="Performance Outerwear Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Performance Outerwear - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_outerwear.jpg" alt="Performance Outerwear Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Performance Outerwear - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+    <!-- 10. UNIFORMS -->
+    <section class="portfolio-division-block" id="cat-uniforms">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.10 // CORPORATE UNIFORM DIVISION</span>
+        <h2 class="division-title">UNIFORMS PORTFOLIO</h2>
+        <p class="division-desc">Corporate office suiting, hotel & restaurant staff hospitality attire, healthcare antimicrobial scrubs, security uniforms, and airline crew wear.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_uniforms.jpg" alt="Corporate Uniforms Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Corporate Uniforms - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_uniforms.jpg" alt="Corporate Uniforms Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Corporate Uniforms - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_uniforms.jpg" alt="Corporate Uniforms Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Corporate Uniforms - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 11. WORKWEAR -->
+    <section class="portfolio-division-block" id="cat-workwear">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.11 // INDUSTRIAL WORKWEAR DIVISION</span>
+        <h2 class="division-title">WORKWEAR PORTFOLIO</h2>
+        <p class="division-desc">Heavy-duty industrial coveralls, flame-resistant jackets, EN ISO 20471 safety hi-vis vests, Cordura reinforced knees, and multi-pocket utility work trousers.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_workwear.jpg" alt="Compliant Workwear Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Compliant Workwear - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_workwear.jpg" alt="Compliant Workwear Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Compliant Workwear - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_workwear.jpg" alt="Compliant Workwear Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Compliant Workwear - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 12. CHILDREN'S WEAR -->
+    <section class="portfolio-division-block" id="cat-children">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.12 // KIDS & INFANT DIVISION</span>
+        <h2 class="division-title">CHILDREN'S WEAR PORTFOLIO</h2>
+        <p class="division-desc">100% GOTS certified organic cotton kids wear, infant rompers, playwear sets, nickel-free snaps, anti-chafe flatlock seams, and OEKO-TEX non-toxic dyes.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_children.jpg" alt="Children's Apparel Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Children's Apparel - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_children.jpg" alt="Children's Apparel Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Children's Apparel - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_children.jpg" alt="Children's Apparel Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Children's Apparel - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 13. CONVOCATION GOWNS -->
+    <section class="portfolio-division-block" id="cat-convocation">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.13 // ACADEMIC ATTIRE DIVISION</span>
+        <h2 class="division-title">CONVOCATION GOWNS PORTFOLIO</h2>
+        <p class="division-desc">Academic graduation gowns, doctoral ceremonial robes with velvet chevron sleeves, mortared caps, tassels, embroidered sashes, and velvet ceremonial hoods.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_convocation.jpg" alt="Convocation Gowns Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Convocation Gowns - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_convocation.jpg" alt="Convocation Gowns Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Convocation Gowns - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_convocation.jpg" alt="Convocation Gowns Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Convocation Gowns - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- 14. PROMOTIONAL APPAREL -->
+    <section class="portfolio-division-block" id="cat-promotional">
+      <div class="division-header-wrapper">
+        <span class="division-tag">DIV.14 // PROMOTIONAL MERCH DIVISION</span>
+        <h2 class="division-title">PROMOTIONAL APPAREL PORTFOLIO</h2>
+        <p class="division-desc">Custom corporate promotional clothing, event t-shirts, embroidered 6-panel caps, eco canvas tote bags, branded windbreakers, and promotional giveaway merchandise.</p>
+      </div>
+
+      <div class="portfolio-photo-grid">
+        <div class="product-photo-card">
+          <img src="assets/cat_promotional.jpg" alt="Promotional Apparel Sample 01" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Promotional Apparel - Spec 01</span>
+            <span class="product-photo-tag">AQL 2.5 Certified</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_promotional.jpg" alt="Promotional Apparel Sample 02" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Promotional Apparel - Spec 02</span>
+            <span class="product-photo-tag">Custom Wash Finish</span>
+          </div>
+        </div>
+        <div class="product-photo-card">
+          <img src="assets/cat_promotional.jpg" alt="Promotional Apparel Sample 03" class="product-photo-img">
+          <div class="product-photo-info">
+            <span class="product-photo-title">Promotional Apparel - Spec 03</span>
+            <span class="product-photo-tag">Global Export Ready</span>
+          </div>
+        </div>
+      </div>
+</section>
+
+  </main>
+
+  <!-- CENTERED FOOTER -->
+  <footer class="footer">
+    <div class="container footer-centered-container">
+      <div class="footer-logo-wrapper">
+        <a href="index.html" aria-label="Drēbes Sourcing Company Logo">
+          <img src="assets/logo.png" alt="Drēbes Sourcing Co. Logo" class="footer-logo-img">
+        </a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61567911440341" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/drebessourcing" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/drebess/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a href="mailto:info@drebes.com" class="social-icon-btn" aria-label="Email Us">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        <p class="copy-text">© 2026 Drēbes Sourcing Co. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

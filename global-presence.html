@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Presence | Drēbes Sourcing Company</title>
+  <meta name="description" content="Explore Drēbes Sourcing Company's global presence. Connected apparel design, display, and manufacturing supply chains across North America, Europe, Middle East, Asia, and Australia.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- LEAFLET MAP CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <link rel="stylesheet" href="index.css?v=29.0">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
+
+  <style>
+    @keyframes markerGlowPulse {
+      0% { box-shadow: 0 0 10px #99CC00, 0 0 20px rgba(153, 204, 0, 0.7); transform: scale(0.9); }
+      50% { box-shadow: 0 0 25px #99CC00, 0 0 45px rgba(153, 204, 0, 1); transform: scale(1.2); }
+      100% { box-shadow: 0 0 10px #99CC00, 0 0 20px rgba(153, 204, 0, 0.7); transform: scale(0.9); }
+    }
+    
+    .leaflet-container {
+      font-family: 'Outfit', sans-serif !important;
+    }
+    
+    .leaflet-control-zoom a {
+      background: var(--bg-card, #0A1624) !important;
+      color: var(--text-main, #FFFFFF) !important;
+      border: 1px solid var(--border-light, rgba(255,255,255,0.15)) !important;
+      font-weight: bold !important;
+    }
+
+    [data-theme="light"] .leaflet-control-zoom a {
+      background: #F8F7F0 !important;
+      color: #2C3E50 !important;
+      border: 1px solid #D5D3C5 !important;
+    }
+
+    /* FORCED EXPLICIT FILTER BUTTON STYLING OVERRIDE */
+    .map-filter-btn {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 0.82rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.12em !important;
+      padding: 0.75rem 1.5rem !important;
+      border-radius: 6px !important;
+      cursor: pointer !important;
+      text-transform: uppercase !important;
+      transition: all 0.25s ease !important;
+      outline: none !important;
+      display: inline-block !important;
+    }
+
+    .map-filter-btn.active {
+      background: #99CC00 !important;
+      color: #0A1624 !important;
+      border: 2px solid #99CC00 !important;
+      box-shadow: 0 0 18px rgba(153, 204, 0, 0.5) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVIGATION -->
+  <header class="header" id="header">
+    <div class="header-top-bar">
+      <!-- LEFT: BIG OFFICIAL LOGO -->
+      <div class="header-brand">
+        <a href="index.html" class="logo-link" aria-label="Drēbes Sourcing Company Logo">
+          <img src="assets/logo.png" alt="Drēbes Sourcing Company Logo" class="logo-img">
+        </a>
+      </div>
+
+      <!-- CENTER: MINIMALIST DASH ICON (=) NO BORDER NO RADIUS -->
+      <div class="header-center-nav">
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- RIGHT: ICON-ONLY THEME TOGGLE -->
+      <div class="header-right-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+          <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- UNIVERSAL BREADCRUMB POP-DOWN DRAWER -->
+    <nav class="nav-menu breadcrumb-nav" id="nav-menu">
+      <div class="nav-item-wrapper"><a href="index.html" class="nav-link">HOME</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="about.html" class="nav-link">ABOUT US</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="services.html" class="nav-link">OUR SERVICES</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="design-studio.html" class="nav-link">DESIGN STUDIO</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="categories.html" class="nav-link">PRODUCT CATEGORIES</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="why-us.html" class="nav-link">WHY DRĒBES</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="process.html" class="nav-link">OUR PROCESS</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="sustainability.html" class="nav-link">SUSTAINABILITY</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="global-presence.html" class="nav-link active">GLOBAL PRESENCE</a><span class="nav-slash">/</span></div>
+      <div class="nav-item-wrapper"><a href="contact.html" class="nav-link">CONTACT</a></div>
+    </nav>
+  </header>
+
+  <!-- 100VW EDGE-TO-EDGE FULL BLEED HERO BANNER -->
+  <section class="subpage-hero-fullbleed page-top-offset">
+    <div class="subpage-hero-bg">
+      <img src="assets/global_presence_hero.jpg" alt="GLOBAL PRESENCE Hero Background">
+    </div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content">
+      <span class="subpage-hero-category">WORLDWIDE SUPPLY NETWORK & HUB LOCATIONS</span>
+      <h1 class="subpage-hero-title">GLOBAL PRESENCE</h1>
+      <p class="subpage-hero-desc">Connecting global fashion capitals with world-class ethical manufacturing, strategy, and display hubs across North America, Europe, Middle East, Asia, and Australia.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="container" style="padding-top: 4rem; padding-bottom: 7rem;">
+
+    <!-- SECTION 1: INTERACTIVE LEAFLET CARTO MAP WITH DYNAMIC THEME CARD -->
+    <section class="card map-card-wrapper fade-in-on-scroll" style="margin-bottom: 7.5rem !important;">
+      
+      <!-- TOP FILTER BUTTONS BAR -->
+      <div class="map-filter-bar" style="display: flex !important; flex-wrap: wrap !important; gap: 0.8rem !important; margin-bottom: 1.8rem !important; align-items: center !important; position: relative !important; z-index: 10 !important;">
+        
+        <button class="map-filter-btn active" data-filter="all" style="font-family: 'Outfit', sans-serif !important; font-size: 0.82rem !important; font-weight: 800 !important; letter-spacing: 0.12em !important; padding: 0.75rem 1.5rem !important; background: #99CC00 !important; color: #0A1624 !important; border: 2px solid #99CC00 !important; border-radius: 6px !important; cursor: pointer !important; text-transform: uppercase !important; box-shadow: 0 0 18px rgba(153, 204, 0, 0.5) !important;">
+          ALL LAYERS
+        </button>
+        
+        <button class="map-filter-btn" data-filter="think" style="font-family: 'Outfit', sans-serif !important; font-size: 0.82rem !important; font-weight: 800 !important; letter-spacing: 0.12em !important; padding: 0.75rem 1.5rem !important; background: rgba(255, 255, 255, 0.08) !important; color: var(--text-main, #FFFFFF) !important; border: 1.5px solid rgba(255, 255, 255, 0.2) !important; border-radius: 6px !important; cursor: pointer !important; text-transform: uppercase !important;">
+          WE THINK (R&D)
+        </button>
+
+        <button class="map-filter-btn" data-filter="display" style="font-family: 'Outfit', sans-serif !important; font-size: 0.82rem !important; font-weight: 800 !important; letter-spacing: 0.12em !important; padding: 0.75rem 1.5rem !important; background: rgba(255, 255, 255, 0.08) !important; color: var(--text-main, #FFFFFF) !important; border: 1.5px solid rgba(255, 255, 255, 0.2) !important; border-radius: 6px !important; cursor: pointer !important; text-transform: uppercase !important;">
+          WE DISPLAY (SHOWROOMS)
+        </button>
+
+        <button class="map-filter-btn" data-filter="assemble" style="font-family: 'Outfit', sans-serif !important; font-size: 0.82rem !important; font-weight: 800 !important; letter-spacing: 0.12em !important; padding: 0.75rem 1.5rem !important; background: rgba(255, 255, 255, 0.08) !important; color: var(--text-main, #FFFFFF) !important; border: 1.5px solid rgba(255, 255, 255, 0.2) !important; border-radius: 6px !important; cursor: pointer !important; text-transform: uppercase !important;">
+          WE ASSEMBLE (DHAKA HQ)
+        </button>
+      </div>
+
+      <!-- LEAFLET CARTO MAP CONTAINER -->
+      <div id="leaflet-global-map" style="width: 100% !important; height: 560px !important; border-radius: 16px !important; overflow: hidden !important; border: 1.5px solid var(--border-light) !important; position: relative !important;"></div>
+    </section>
+
+    <!-- SECTION 2: 3-PILLAR OPERATIONAL NETWORK (WE THINK, WE DISPLAY, WE ASSEMBLE) -->
+    <section class="fade-in-on-scroll" style="margin-top: 3.5rem !important;">
+      <div style="margin-bottom: 3rem;">
+        <span style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 800; color: var(--lime-primary); letter-spacing: 0.25em; text-transform: uppercase;">
+          OPERATIONAL PILLARS
+        </span>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 700; margin-top: 0.4rem;">
+          GLOBAL PRESENCE
+        </h2>
+      </div>
+
+      <div class="grid-3" style="gap: 2.5rem;">
+        
+        <!-- PILLAR 1: WE THINK -->
+        <div class="card pillar-card" style="padding: 2.8rem 2.2rem; border-radius: 24px; display: flex; flex-direction: column; justify-content: flex-start; border-top: 4px solid var(--lime-primary);">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.9rem; font-weight: 700; color: var(--text-main); display: inline-block; border-bottom: 2.5px solid var(--lime-primary); padding-bottom: 0.4rem; letter-spacing: 0.05em;">
+              WE THINK
+            </h3>
+            <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted); margin-top: 0.8rem;">
+              Global design labs, trend forecasting studios, and strategic product development hubs.
+            </p>
+          </div>
+
+          <ul class="pillar-city-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              NEW YORK
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              LONDON
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              BARCELONA
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              DUBAI
+            </li>
+          </ul>
+        </div>
+
+        <!-- PILLAR 2: WE DISPLAY -->
+        <div class="card pillar-card" style="padding: 2.8rem 2.2rem; border-radius: 24px; display: flex; flex-direction: column; justify-content: flex-start; border-top: 4px solid var(--lime-primary);">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.9rem; font-weight: 700; color: var(--text-main); display: inline-block; border-bottom: 2.5px solid var(--lime-primary); padding-bottom: 0.4rem; letter-spacing: 0.05em;">
+              WE DISPLAY
+            </h3>
+            <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted); margin-top: 0.8rem;">
+              International sample galleries, tactile fabric libraries, and interactive buyer showrooms.
+            </p>
+          </div>
+
+          <ul class="pillar-city-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              DHAKA
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              LONDON
+            </li>
+          </ul>
+        </div>
+
+        <!-- PILLAR 3: WE ASSEMBLE -->
+        <div class="card pillar-card" style="padding: 2.8rem 2.2rem; border-radius: 24px; display: flex; flex-direction: column; justify-content: flex-start; border-top: 4px solid var(--lime-primary);">
+          <div style="margin-bottom: 2rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.9rem; font-weight: 700; color: var(--text-main); display: inline-block; border-bottom: 2.5px solid var(--lime-primary); padding-bottom: 0.4rem; letter-spacing: 0.05em;">
+              WE ASSEMBLE
+            </h3>
+            <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted); margin-top: 0.8rem;">
+              Audited, compliant manufacturing facilities and end-to-end production logistics lines.
+            </p>
+          </div>
+
+          <ul class="pillar-city-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.9rem;">
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              BANGLADESH
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              CHINA
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              USA
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              UK
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              SPAIN
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              ITALY
+            </li>
+            <li style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.8rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime-primary);"></span>
+              AUSTRALIA
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-centered-container">
+      <div class="footer-logo-wrapper">
+        <a href="index.html" aria-label="Drēbes Sourcing Company Logo">
+          <img src="assets/logo.png" alt="Drēbes Sourcing Co. Logo" class="footer-logo-img">
+        </a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61567911440341" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/drebessourcing" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/drebess/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a href="mailto:info@drebes.com" class="social-icon-btn" aria-label="Email Us">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        <p class="copy-text">© 2026 Drēbes Sourcing Co. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LEAFLET MAP ENGINE SCRIPT -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="index.js"></script>
+
+  <!-- LEAFLET CARTO MAP INITIALIZATION SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mapElement = document.getElementById('leaflet-global-map');
+      if (!mapElement) return;
+
+      // Initialize Leaflet Map centered on world view
+      const map = L.map('leaflet-global-map', {
+        center: [28, 12],
+        zoom: 2.2,
+        minZoom: 2,
+        maxZoom: 8,
+        zoomControl: true
+      });
+
+      // CARTO Light Positron Tile Layer
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '<span style="color:#99CC00; font-weight:800;">Leaflet</span> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Locations matching Drēbes operational hubs and pillars
+      const locations = [
+        { name: 'New York (USA)', coords: [40.7128, -74.0060], categories: ['think', 'assemble'], desc: 'Strategic Design & Trend Hub' },
+        { name: 'Los Angeles (USA)', coords: [34.0522, -118.2437], categories: ['think', 'assemble'], desc: 'West Coast Showroom' },
+        { name: 'London (UK)', coords: [51.5074, -0.1278], categories: ['think', 'display', 'assemble'], desc: 'European Design & Display Lab' },
+        { name: 'Barcelona (Spain)', coords: [41.3851, 2.1734], categories: ['think', 'assemble'], desc: 'Mediterranean Design Studio' },
+        { name: 'Milan (Italy)', coords: [45.4642, 9.1900], categories: ['assemble'], desc: 'Luxury Apparel Assembly Hub' },
+        { name: 'Dubai (UAE)', coords: [25.2048, 55.2708], categories: ['think'], desc: 'Middle East Strategy Hub' },
+        { name: 'Dhaka (Bangladesh HQ)', coords: [23.8103, 90.4125], categories: ['display', 'assemble'], desc: 'Global Manufacturing & Showroom HQ' },
+        { name: 'Shanghai (China)', coords: [31.2304, 121.4737], categories: ['assemble'], desc: 'East Asian Supply Line' },
+        { name: 'Sydney (Australia)', coords: [-33.8688, 151.2093], categories: ['assemble'], desc: 'Oceania Distribution & Supply Line' }
+      ];
+
+      // Glowing Lime Green Marker Icon
+      const markerCustomIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='width:24px; height:24px; background:#99CC00; border-radius:50%; border:3px solid #FFFFFF; box-shadow:0 0 20px #99CC00, 0 0 35px rgba(153,204,0,0.9); animation: markerGlowPulse 1.8s ease-out infinite;'></div>",
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+
+      const markers = [];
+
+      locations.forEach(loc => {
+        const marker = L.marker(loc.coords, { icon: markerCustomIcon })
+          .bindPopup(`<div style="padding:4px;"><strong style="font-family: Outfit, sans-serif; font-size: 0.95rem; color: #0A1624;">${loc.name}</strong><br><span style="font-size: 0.82rem; color: #4A5B6E;">${loc.desc}</span></div>`);
+        
+        marker.categoryList = loc.categories;
+        marker.addTo(map);
+        markers.push(marker);
+      });
+
+      // Filter Buttons & Theme Dynamic Styling Engine
+      const filterBtns = document.querySelectorAll('.map-filter-btn');
+
+      function updateBtnStyles() {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        filterBtns.forEach(btn => {
+          if (btn.classList.contains('active')) {
+            btn.style.setProperty('background', '#99CC00', 'important');
+            btn.style.setProperty('color', '#0A1624', 'important');
+            btn.style.setProperty('border', '2px solid #99CC00', 'important');
+            btn.style.setProperty('box-shadow', '0 0 18px rgba(153, 204, 0, 0.5)', 'important');
+          } else {
+            if (isLight) {
+              btn.style.setProperty('background', '#ECEBE2', 'important');
+              btn.style.setProperty('color', '#2C3E50', 'important');
+              btn.style.setProperty('border', '1.5px solid #D5D3C5', 'important');
+            } else {
+              btn.style.setProperty('background', 'rgba(255, 255, 255, 0.08)', 'important');
+              btn.style.setProperty('color', '#FFFFFF', 'important');
+              btn.style.setProperty('border', '1.5px solid rgba(255, 255, 255, 0.2)', 'important');
+            }
+            btn.style.setProperty('box-shadow', 'none', 'important');
+          }
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          updateBtnStyles();
+
+          const filter = btn.getAttribute('data-filter');
+
+          markers.forEach(m => {
+            if (filter === 'all' || m.categoryList.includes(filter)) {
+              m.addTo(map);
+            } else {
+              map.removeLayer(m);
+            }
+          });
+        });
+      });
+
+      // Run initial button style calculation
+      updateBtnStyles();
+
+      // Listen for Theme Toggle Button Clicks
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          setTimeout(updateBtnStyles, 60);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

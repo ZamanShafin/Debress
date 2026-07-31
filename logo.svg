@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="100%" height="100%">
+  <!-- Definitions for reusable elements or styles -->
+  <defs>
+    <style>
+      .pond-color { fill: #203E4B; }
+      .lizard-color { fill: #A2C617; }
+      .lizard-stroke { stroke: #A2C617; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .logo-text-bold { font-family: 'Outfit', 'Nexa Bold', 'Montserrat', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.5px; }
+      .logo-text-light { font-family: 'Outfit', 'Nexa Light', 'Montserrat', sans-serif; font-weight: 300; font-size: 26px; letter-spacing: 2px; }
+      .logo-text-spaced { font-family: 'Space Grotesk', 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 11px; }
+    </style>
+  </defs>
+
+  <!-- Left: Monogram Icon (Needle & Stylized D/S) -->
+  <g transform="translate(10, 10)">
+    <!-- Elegant Cursive D loop -->
+    <path d="M 60,35 C 50,5 25,5 33,35 C 40,60 70,80 50,90 C 35,97 22,85 24,70 C 25,60 30,62 28,68 C 26,74 29,82 37,82 C 45,82 52,65 47,48 C 42,32 30,12 15,35 C 5,50 8,72 20,83 C 24,86 23,89 19,87 C 12,82 4,68 6,48 C 8,25 24,10 42,10 C 60,10 74,28 72,48 C 70,68 55,80 43,92" class="lizard-stroke" stroke-width="1.8" />
+    <circle cx="43" cy="92" r="2.5" class="lizard-color" />
+    
+    <!-- Vertical Needle -->
+    <path d="M 50,18 L 50,85" class="lizard-stroke" stroke-width="2.2" />
+    <!-- Needle eye contour -->
+    <path d="M 50,22 C 48,25 48,32 50,35 C 52,32 52,25 50,22 Z" fill="#FAF9F6" stroke="#A2C617" stroke-width="1.5" />
+    <!-- Small thread circle through eye -->
+    <circle cx="50" cy="27" r="1.5" class="lizard-color" />
+    
+    <!-- Stylized bold 'S' wrapping around needle -->
+    <path d="M 51,46 C 56,43 62,45 62,50 C 62,54 57,56 52,58 C 47,60 44,63 44,67 C 44,72 50,75 56,73 L 57,66 C 53,67 49,66 49,64 C 49,62 52,61 57,59 C 62,57 68,54 68,48 C 68,41 59,38 51,41 Z" class="lizard-color" />
+  </g>
+
+  <!-- Right: Typography Wordmark -->
+  <!-- "drēbes" -->
+  <g transform="translate(115, 68)">
+    <text x="0" y="0" class="pond-color logo-text-bold">dr</text>
+    <!-- Custom ē with macron and green leaf-like accent -->
+    <g transform="translate(28, 0)">
+      <!-- The 'e' base -->
+      <path d="M 0,-21 C 6,-21 11,-17 12,-11 L -11,-11 C -11,-4 -6,0 0,0 C 5,0 9,-2 11,-6 L 15,-3 C 12,3 7,5 0,5 C -8,5 -15,-1 -15,-8 C -15,-16 -8,-21 0,-21 Z" class="pond-color" />
+      <!-- The leaf bar of 'e' (green accent) -->
+      <path d="M -10,-13 L 9,-13 C 9,-13 9,-19 0,-19 C -7,-19 -10,-13 -10,-13 Z" class="lizard-color" />
+      <!-- The macron accent above 'ē' -->
+      <rect x="-10" y="-27" width="20" height="3.5" rx="1.5" class="pond-color" />
+    </g>
+    <text x="63" y="0" class="pond-color logo-text-bold">bes</text>
+    
+    <!-- "SOURCING" in Reflecting Pond -->
+    <text x="135" y="-3" class="pond-color logo-text-light">SOURCING</text>
+    
+    <!-- "COMPANY" in Lounge Lizard -->
+    <text x="10" y="22" class="lizard-color logo-text-spaced">COMPANY</text>
+  </g>
+</svg>
