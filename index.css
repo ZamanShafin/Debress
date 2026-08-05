@@ -411,19 +411,21 @@ body[data-theme="light"] .menu-toggle-btn span,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--navy-dark);
+  color: #0b192c;
   cursor: pointer;
   transition: all var(--transition-fast);
-  box-shadow: 0 4px 15px rgba(153, 204, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(153, 204, 0, 0.4);
 }
 
 .theme-toggle-btn:hover {
-  transform: rotate(20deg) scale(1.08);
+  transform: rotate(30deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(153, 204, 0, 0.6);
 }
 
 .theme-toggle-btn svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.2px;
 }
 
 /* UNIVERSAL POP-DOWN BREADCRUMB MENU DRAWER */
