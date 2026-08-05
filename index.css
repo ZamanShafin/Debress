@@ -2233,6 +2233,7 @@ body[data-theme="light"] .nav-link.active,
   align-items: flex-start;
   text-align: left;
   gap: 0.8rem;
+  margin-top: -14px;
 }
 
 .footer-zone-center {
