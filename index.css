@@ -2192,50 +2192,63 @@ body[data-theme="light"] .nav-link.active,
   border-top: 3px solid var(--lime-primary);
 }
 
-.footer-centered-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1620px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-}
-
-/* EXPANDED 4-COLUMN FOOTER SYSTEM - MATCHES HEADER DISTANCES & EDGES */
-.footer-grid {
+/* FOOTER 3-ZONE LAYOUT - EXACT 1-TO-1 ALIGNMENT WITH HEADER */
+.footer-3zone-container {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.6fr;
-  gap: 3.5rem;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 0 3.5rem 0;
+  grid-template-columns: 1fr auto 1fr;
   align-items: start;
-  text-align: left;
+  padding: 0 2.5rem;
+  max-width: 1480px;
+  margin: 0 auto 3.5rem auto;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.2rem;
+  .footer-3zone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
     text-align: center;
   }
-
-  .footer-col, .footer-col-brand, .footer-contact-item {
+  
+  .footer-zone-left, .footer-zone-center, .footer-zone-right {
+    justify-self: center !important;
     align-items: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  .footer-contact-item {
     justify-content: center !important;
     text-align: center !important;
   }
+}
 
-  .footer-logo-wrapper {
-    justify-content: center !important;
-  }
+.footer-zone-left {
+  justify-self: start;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.8rem;
+}
+
+.footer-zone-center {
+  justify-self: center;
+  display: flex;
+  gap: 4.5rem;
+  text-align: left;
+}
+
+.footer-zone-right {
+  justify-self: end;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .footer-col {
