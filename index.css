@@ -477,16 +477,21 @@ body[data-theme="light"] .nav-menu.vertical-nav-drawer,
   margin: 0 auto;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .vertical-nav-links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.65rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
   width: 100%;
-  max-width: 440px;
+  max-width: 600px;
+  text-align: center;
 }
 
 .vertical-nav-links .nav-link {
@@ -496,16 +501,18 @@ body[data-theme="light"] .nav-menu.vertical-nav-drawer,
   letter-spacing: 0.04em !important;
   text-decoration: none !important;
   transition: all var(--transition-fast) !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 1.1rem !important;
+  justify-content: center !important;
+  gap: 0.8rem !important;
   padding: 0.2rem 0 !important;
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   opacity: 1 !important;
   text-transform: uppercase !important;
-  width: 100%;
+  width: auto;
+  text-align: center !important;
 }
 
 /* DARK MODE LINK COLORS */
@@ -548,7 +555,7 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
 
 .vertical-nav-links .nav-link.active .nav-arrow,
 .vertical-nav-links .nav-link:hover .nav-arrow {
-  transform: translate(4px, -4px) scale(1.15) !important;
+  transform: translate(3px, -3px) scale(1.15) !important;
   opacity: 1 !important;
   stroke: var(--lime-primary) !important;
 }
@@ -557,7 +564,7 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
 .vertical-nav-links .nav-link:hover {
   color: var(--lime-primary) !important;
   text-shadow: 0 0 16px rgba(153, 204, 0, 0.6) !important;
-  transform: translateX(10px) !important;
+  transform: translateY(-2px) scale(1.05) !important;
   font-weight: 800 !important;
 }
 
