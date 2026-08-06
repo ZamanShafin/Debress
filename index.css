@@ -529,15 +529,9 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
   color: #0B192C !important;
 }
 
+.nav-num,
 .vertical-nav-links .nav-num {
-  font-family: var(--font-sans) !important;
-  font-size: 0.78rem !important;
-  font-weight: 800 !important;
-  color: var(--lime-primary) !important;
-  letter-spacing: 0.12em !important;
-  opacity: 0.85;
-  transition: opacity var(--transition-fast);
-  white-space: nowrap;
+  display: none !important;
 }
 
 .vertical-nav-links .nav-text {
