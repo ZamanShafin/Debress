@@ -493,12 +493,12 @@ body[data-theme="light"] .nav-menu.vertical-nav-drawer,
   font-family: var(--font-serif) !important;
   font-size: clamp(1.05rem, 1.4vw, 1.35rem) !important;
   font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.04em !important;
   text-decoration: none !important;
   transition: all var(--transition-fast) !important;
   display: flex !important;
   align-items: center !important;
-  gap: 1rem !important;
+  gap: 1.1rem !important;
   padding: 0.2rem 0 !important;
   background: transparent !important;
   border: none !important;
@@ -522,14 +522,35 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
   color: #0B192C !important;
 }
 
-.vertical-nav-links .nav-link span {
+.vertical-nav-links .nav-num {
   font-family: var(--font-sans) !important;
-  font-size: 0.75rem !important;
+  font-size: 0.78rem !important;
   font-weight: 800 !important;
   color: var(--lime-primary) !important;
-  letter-spacing: 0.1em !important;
-  opacity: 0.75;
+  letter-spacing: 0.12em !important;
+  opacity: 0.85;
   transition: opacity var(--transition-fast);
+  white-space: nowrap;
+}
+
+.vertical-nav-links .nav-text {
+  flex-grow: 0;
+}
+
+.vertical-nav-links .nav-arrow {
+  width: 18px;
+  height: 18px;
+  stroke: var(--lime-primary);
+  opacity: 0.85;
+  transition: transform var(--transition-fast), opacity var(--transition-fast), stroke var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.vertical-nav-links .nav-link.active .nav-arrow,
+.vertical-nav-links .nav-link:hover .nav-arrow {
+  transform: translate(4px, -4px) scale(1.15) !important;
+  opacity: 1 !important;
+  stroke: var(--lime-primary) !important;
 }
 
 .vertical-nav-links .nav-link.active,
@@ -547,11 +568,10 @@ body[data-theme="light"] .vertical-nav-links .nav-link.active,
   text-shadow: 0 0 12px rgba(127, 168, 0, 0.4) !important;
 }
 
-.vertical-nav-links .nav-link.active span,
-.vertical-nav-links .nav-link:hover span {
-  color: var(--lime-primary) !important;
-  opacity: 1 !important;
-  text-shadow: 0 0 12px rgba(153, 204, 0, 0.7) !important;
+html[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow,
+body[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow,
+[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow {
+  stroke: #7fa800 !important;
 }
 
 @media (max-width: 640px) {
