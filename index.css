@@ -1464,7 +1464,7 @@ body[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow,
   width: 400px;
   height: 500px;
   object-fit: cover;
-  filter: grayscale(100%) contrast(1.1);
+  filter: none;
   border-radius: 4px;
   z-index: 1;
   pointer-events: none;
