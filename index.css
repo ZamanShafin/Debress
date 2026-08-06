@@ -504,7 +504,6 @@ body[data-theme="light"] .nav-menu.vertical-nav-drawer,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.8rem !important;
   padding: 0.2rem 0 !important;
   background: transparent !important;
   border: none !important;
@@ -513,20 +512,20 @@ body[data-theme="light"] .nav-menu.vertical-nav-drawer,
   text-transform: uppercase !important;
   width: auto;
   text-align: center !important;
+  position: relative !important;
 }
 
-/* DARK MODE LINK COLORS */
+/* DARK & LIGHT THEME DEFAULT LINK COLORS */
 html[data-theme="dark"] .vertical-nav-links .nav-link,
 body[data-theme="dark"] .vertical-nav-links .nav-link,
 [data-theme="dark"] .vertical-nav-links .nav-link {
-  color: rgba(255, 255, 255, 0.88) !important;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-/* LIGHT MODE LINK COLORS */
 html[data-theme="light"] .vertical-nav-links .nav-link,
 body[data-theme="light"] .vertical-nav-links .nav-link,
 [data-theme="light"] .vertical-nav-links .nav-link {
-  color: #0B192C !important;
+  color: #0B192C;
 }
 
 .nav-num,
@@ -535,21 +534,26 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
 }
 
 .vertical-nav-links .nav-text {
-  flex-grow: 0;
+  text-align: center !important;
+  display: inline-block !important;
 }
 
 .vertical-nav-links .nav-arrow {
-  width: 18px;
-  height: 18px;
+  position: absolute !important;
+  left: 100% !important;
+  margin-left: 0.4rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 16px !important;
+  height: 16px !important;
   stroke: var(--lime-primary);
   opacity: 0.85;
   transition: transform var(--transition-fast), opacity var(--transition-fast), stroke var(--transition-fast);
-  flex-shrink: 0;
 }
 
 .vertical-nav-links .nav-link.active .nav-arrow,
 .vertical-nav-links .nav-link:hover .nav-arrow {
-  transform: translate(3px, -3px) scale(1.15) !important;
+  transform: translateY(-50%) translate(3px, -3px) scale(1.15) !important;
   opacity: 1 !important;
   stroke: #99CC00 !important;
 }
