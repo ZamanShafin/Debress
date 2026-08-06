@@ -158,136 +158,185 @@
 
     </div> <!-- END OF VERTICAL CARD STACK -->
 
-  <!-- FACTORY WITH CERTIFICATIONS HORIZONTAL MARQUEE SECTION -->
-  <section class="cert-marquee-section" style="width: 100vw !important; position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; padding: 4rem 0 !important; overflow: hidden !important; background: transparent !important; display: block !important;">
-    <style>
-      .cert-marquee-section {
-        width: 100vw !important;
-        position: relative !important;
-        left: 50% !important;
-        right: 50% !important;
-        margin-left: -50vw !important;
-        margin-right: -50vw !important;
-        padding: 4rem 0 !important;
-        overflow: hidden !important;
-        background: transparent !important;
-        display: block !important;
-      }
-      .cert-marquee-title {
-        font-family: var(--font-sans), sans-serif !important;
-        font-weight: 800 !important;
-        letter-spacing: 0.08em !important;
-        text-transform: uppercase !important;
-        font-size: clamp(1.8rem, 3.5vw, 2.5rem) !important;
-        margin-bottom: 2.5rem !important;
-        text-align: center !important;
-        color: var(--navy-dark, #0B192C) !important;
-        display: block !important;
-      }
-      [data-theme="dark"] .cert-marquee-title {
-        color: #FFFFFF !important;
-      }
-      .cert-marquee-container {
-        display: flex !important;
-        flex-direction: row !important;
-        overflow: hidden !important;
-        width: 100% !important;
-        position: relative !important;
-      }
-      .cert-marquee-track {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        gap: 2.5rem !important;
-        width: max-content !important;
-        animation: certMarqueePan 25s linear infinite !important;
-        -webkit-animation: certMarqueePan 25s linear infinite !important;
-        will-change: transform !important;
-      }
-      .cert-marquee-container:hover .cert-marquee-track {
-        animation-play-state: paused !important;
-        -webkit-animation-play-state: paused !important;
-      }
-      .cert-item-card {
-        flex: 0 0 auto !important;
-        flex-shrink: 0 !important;
-        width: 160px !important;
-        height: 90px !important;
-        background: #FFFFFF !important;
-        border-radius: 14px !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0.8rem 1.2rem !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
-        border: 1px solid rgba(0, 0, 0, 0.08) !important;
-        box-sizing: border-box !important;
-      }
-      [data-theme="dark"] .cert-item-card {
-        background: #FFFFFF !important;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-      }
-      .cert-item-card img {
-        max-height: 60px !important;
-        max-width: 125px !important;
-        width: auto !important;
-        height: auto !important;
-        object-fit: contain !important;
-        display: block !important;
-      }
-      @keyframes certMarqueePan {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      @-webkit-keyframes certMarqueePan {
-        0% { -webkit-transform: translateX(0); }
-        100% { -webkit-transform: translateX(-50%); }
-      }
-    </style>
-
-    <h2 class="cert-marquee-title">FACTORY WITH CERTIFICATIONS</h2>
-
-    <div class="cert-marquee-container">
-      <div class="cert-marquee-track">
-        <!-- Set 1 (15 Badges from New folder) -->
-        <div class="cert-item-card"><img src="assets/New folder/1.png" alt="Certification Badge 1"></div>
-        <div class="cert-item-card"><img src="assets/New folder/2.png" alt="Certification Badge 2"></div>
-        <div class="cert-item-card"><img src="assets/New folder/3.png" alt="Certification Badge 3"></div>
-        <div class="cert-item-card"><img src="assets/New folder/4.png" alt="Certification Badge 4"></div>
-        <div class="cert-item-card"><img src="assets/New folder/5.png" alt="Certification Badge 5"></div>
-        <div class="cert-item-card"><img src="assets/New folder/6.png" alt="Certification Badge 6"></div>
-        <div class="cert-item-card"><img src="assets/New folder/7.png" alt="Certification Badge 7"></div>
-        <div class="cert-item-card"><img src="assets/New folder/8.svg" alt="Certification Badge 8"></div>
-        <div class="cert-item-card"><img src="assets/New folder/9.png" alt="Certification Badge 9"></div>
-        <div class="cert-item-card"><img src="assets/New folder/10.png" alt="Certification Badge 10"></div>
-        <div class="cert-item-card"><img src="assets/New folder/11.png" alt="Certification Badge 11"></div>
-        <div class="cert-item-card"><img src="assets/New folder/12.png" alt="Certification Badge 12"></div>
-        <div class="cert-item-card"><img src="assets/New folder/13.png" alt="Certification Badge 13"></div>
-        <div class="cert-item-card"><img src="assets/New folder/14.png" alt="Certification Badge 14"></div>
-        <div class="cert-item-card"><img src="assets/New folder/15.png" alt="Certification Badge 15"></div>
-
-        <!-- Set 2 (15 Duplicate Badges for Seamless Gapless Loop) -->
-        <div class="cert-item-card"><img src="assets/New folder/1.png" alt="Certification Badge 1"></div>
-        <div class="cert-item-card"><img src="assets/New folder/2.png" alt="Certification Badge 2"></div>
-        <div class="cert-item-card"><img src="assets/New folder/3.png" alt="Certification Badge 3"></div>
-        <div class="cert-item-card"><img src="assets/New folder/4.png" alt="Certification Badge 4"></div>
-        <div class="cert-item-card"><img src="assets/New folder/5.png" alt="Certification Badge 5"></div>
-        <div class="cert-item-card"><img src="assets/New folder/6.png" alt="Certification Badge 6"></div>
-        <div class="cert-item-card"><img src="assets/New folder/7.png" alt="Certification Badge 7"></div>
-        <div class="cert-item-card"><img src="assets/New folder/8.svg" alt="Certification Badge 8"></div>
-        <div class="cert-item-card"><img src="assets/New folder/9.png" alt="Certification Badge 9"></div>
-        <div class="cert-item-card"><img src="assets/New folder/10.png" alt="Certification Badge 10"></div>
-        <div class="cert-item-card"><img src="assets/New folder/11.png" alt="Certification Badge 11"></div>
-        <div class="cert-item-card"><img src="assets/New folder/12.png" alt="Certification Badge 12"></div>
-        <div class="cert-item-card"><img src="assets/New folder/13.png" alt="Certification Badge 13"></div>
-        <div class="cert-item-card"><img src="assets/New folder/14.png" alt="Certification Badge 14"></div>
-        <div class="cert-item-card"><img src="assets/New folder/15.png" alt="Certification Badge 15"></div>
+    <!-- SECTION 3: COMPLIANCE & INTERNATIONAL STANDARDS (15 CERTIFICATION CARDS) -->
+    <section class="fade-in-on-scroll" style="margin-top: 5rem; margin-bottom: 4rem;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 800; color: var(--lime-primary); letter-spacing: 0.2em; text-transform: uppercase;">GLOBAL CERTIFICATIONS &amp; AUDITED STANDARDS</span>
+        <h2 style="font-family: var(--font-sans); font-size: clamp(1.4rem, 2.8vw, 2.1rem); font-weight: 800; margin-top: 0.5rem; color: var(--text-main); max-width: 920px; margin-left: auto; margin-right: auto; line-height: 1.3;">
+          OUR MANUFACTURING PARTNERS ARE COMPLIANT WITH ALL 15 INTERNATIONAL STANDARDS AND CODES OF CONDUCT:
+        </h2>
       </div>
-    </div>
-  </section>
+
+      <!-- FULL 15 CERTIFICATION CARDS GRID -->
+      <div class="grid-3" style="gap: 2rem; align-items: stretch;">
+        
+        <!-- CARD 1: GOTS (1.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/1.png" alt="GOTS Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">GOTS</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Global Organic Textile Standard</p>
+          </div>
+        </div>
+
+        <!-- CARD 2: OCS 100 (2.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/2.png" alt="OCS 100 Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">OCS 100</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Organic 100 Content Standard</p>
+          </div>
+        </div>
+
+        <!-- CARD 3: ACCORD (3.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/3.png" alt="ACCORD Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">ACCORD</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Fire &amp; Building Safety in Bangladesh</p>
+          </div>
+        </div>
+
+        <!-- CARD 4: OEKO-TEX (4.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/4.png" alt="OEKO-TEX Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">OEKO-TEX</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Standard 100 Harmful Substance Tested</p>
+          </div>
+        </div>
+
+        <!-- CARD 5: FAIRTRADE (5.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/5.png" alt="FAIRTRADE Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">FAIRTRADE</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Fairtrade Certified Cotton Sourcing</p>
+          </div>
+        </div>
+
+        <!-- CARD 6: BLUESIGN (6.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/6.png" alt="BLUESIGN Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">BLUESIGN</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">System Partner Sustainable Textiles</p>
+          </div>
+        </div>
+
+        <!-- CARD 7: SEDEX (7.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/7.png" alt="SEDEX Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">SEDEX</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">SMETA Ethical Supply Chain Audited</p>
+          </div>
+        </div>
+
+        <!-- CARD 8: WRAP (8.svg) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/8.svg" alt="WRAP Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">WRAP</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Worldwide Responsible Accredited Production</p>
+          </div>
+        </div>
+
+        <!-- CARD 9: BUREAU VERITAS (9.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/9.png" alt="BUREAU VERITAS Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">BUREAU VERITAS</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Global Testing &amp; Certification Compliance</p>
+          </div>
+        </div>
+
+        <!-- CARD 10: BSCI (10.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/10.png" alt="BSCI Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">BSCI</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Business Social Compliance Initiative</p>
+          </div>
+        </div>
+
+        <!-- CARD 11: ISO (11.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/11.png" alt="ISO Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">ISO</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">International Standards Organization</p>
+          </div>
+        </div>
+
+        <!-- CARD 12: AMFORI BSCI (12.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/12.png" alt="amfori BSCI Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">amfori BSCI</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Trade With Purpose Ethical Audits</p>
+          </div>
+        </div>
+
+        <!-- CARD 13: GRS (13.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/13.png" alt="GRS Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">GRS</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Global Recycled Standard</p>
+          </div>
+        </div>
+
+        <!-- CARD 14: GMP (14.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/14.png" alt="GMP Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">GMP</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">Good Manufacturing Practice Quality Product</p>
+          </div>
+        </div>
+
+        <!-- CARD 15: RSC (15.png) -->
+        <div class="card" style="align-items: center; text-align: center; padding: 2.2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; border: 1.5px solid var(--border-light);">
+          <div style="width: 100%; height: 120px; background: #FFFFFF !important; border-radius: 14px; padding: 0.8rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.12);">
+            <img src="assets/New folder/15.png" alt="RSC Logo" style="max-height: 105px; max-width: 90%; width: auto; height: auto; object-fit: contain; display: block;">
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em;">RSC</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500;">RMG Sustainability Council</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <div class="vertical-card-stack" style="margin-top: 3rem;">
       <!-- VERTICAL CARD 4: CALL TO ACTION -->
