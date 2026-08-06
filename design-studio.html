@@ -177,32 +177,35 @@
       </div>
 
       <!-- 5. Graphic Development -->
-      <div class="card" style="justify-content: flex-start;">
-        <div class="service-card-icon-wrapper" style="margin-bottom: 1.4rem;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--lime-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: rgba(153, 204, 0, 0.08); padding: 11px; border-radius: 16px; border: 1px solid rgba(153, 204, 0, 0.35);">
-            <circle cx="13.5" cy="6.5" r=".5"/>
-            <circle cx="17.5" cy="10.5" r=".5"/>
-            <circle cx="8.5" cy="7.5" r=".5"/>
-            <circle cx="6.5" cy="12.5" r=".5"/>
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.5-.72 1.5-1.5 0-.41-.15-.79-.42-1.08-.27-.29-.43-.68-.43-1.11 0-.92.74-1.66 1.66-1.66H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"/>
-          </svg>
+      <div class="card service-interactive-card" data-modal="modal-graphic-dev" style="justify-content: space-between; flex-direction: column;">
+        <div>
+          <div class="service-card-icon-wrapper" style="margin-bottom: 1.4rem;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--lime-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: rgba(153, 204, 0, 0.08); padding: 11px; border-radius: 16px; border: 1px solid rgba(153, 204, 0, 0.35);">
+              <circle cx="13.5" cy="6.5" r=".5"/>
+              <circle cx="17.5" cy="10.5" r=".5"/>
+              <circle cx="8.5" cy="7.5" r=".5"/>
+              <circle cx="6.5" cy="12.5" r=".5"/>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.5-.72 1.5-1.5 0-.41-.15-.79-.42-1.08-.27-.29-.43-.68-.43-1.11 0-.92.74-1.66 1.66-1.66H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Graphic Development</h3>
+          <p class="card-desc" style="margin-bottom: 0;">High-density screen prints, puff prints, rotary all-over patterns, digital sublimation, and artwork placement.</p>
         </div>
-        <h3 class="card-title">Graphic Development</h3>
-        <p class="card-desc" style="margin-bottom: 0.8rem;">Combining creativity, technology, and market intelligence to develop distinctive graphics that elevate fashion collections. Every artwork is optimized for aesthetics, production efficiency, and commercial success.</p>
-        <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
-          <strong style="color: var(--lime-primary); font-size: 1.1rem;">•</strong> Fashion graphics, Print innovations - Placement &amp; All over print (AOP), Digital print artwork, Embroidery artwork development, and Visual brand identity.
-        </p>
+        <button class="btn btn-secondary" style="margin-top: 1.5rem; width: fit-content;">Read More →</button>
       </div>
 
       <!-- 6. Fabric Innovation -->
-      <div class="card" style="justify-content: flex-start;">
-        <div class="service-card-icon-wrapper" style="margin-bottom: 1.4rem;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--lime-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: rgba(153, 204, 0, 0.08); padding: 11px; border-radius: 16px; border: 1px solid rgba(153, 204, 0, 0.35);">
-            <path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0 0 12 2zm-1 14.5v-5l-4 4v-4l4-4h5"/>
-          </svg>
+      <div class="card service-interactive-card" data-modal="modal-fabric-innovation" style="justify-content: space-between; flex-direction: column;">
+        <div>
+          <div class="service-card-icon-wrapper" style="margin-bottom: 1.4rem;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--lime-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: rgba(153, 204, 0, 0.08); padding: 11px; border-radius: 16px; border: 1px solid rgba(153, 204, 0, 0.35);">
+              <path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0 0 12 2zm-1 14.5v-5l-4 4v-4l4-4h5"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Fabric Innovation</h3>
+          <p class="card-desc" style="margin-bottom: 0;">Developing performance textiles, organic cotton blends, recycled fibers, moisture-wicking knits, and eco-finishes.</p>
         </div>
-        <h3 class="card-title">Fabric Innovation</h3>
-        <p class="card-desc" style="margin-bottom: 0;">We develop innovative fabric solutions that combine sustainability, comfort, performance textiles, innovative blends, and advanced finishing solutions and durability to meet the evolving needs of global fashion and lifestyle brands.</p>
+        <button class="btn btn-secondary" style="margin-top: 1.5rem; width: fit-content;">Read More →</button>
       </div>
 
       <!-- 7. Wash Development -->
@@ -281,6 +284,50 @@
 
     </div>
   </main>
+
+  <!-- POP-UP MODAL: GRAPHIC DEVELOPMENT -->
+  <div class="service-modal-overlay" id="modal-graphic-dev">
+    <div class="service-modal-card">
+      <button class="service-modal-close" aria-label="Close Modal">✕</button>
+      <div style="margin-bottom: 1.2rem;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--lime-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: rgba(153, 204, 0, 0.08); padding: 12px; border-radius: 16px; border: 1px solid rgba(153, 204, 0, 0.35);">
+          <circle cx="13.5" cy="6.5" r=".5"/>
+          <circle cx="17.5" cy="10.5" r=".5"/>
+          <circle cx="8.5" cy="7.5" r=".5"/>
+          <circle cx="6.5" cy="12.5" r=".5"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.5-.72 1.5-1.5 0-.41-.15-.79-.42-1.08-.27-.29-.43-.68-.43-1.11 0-.92.74-1.66 1.66-1.66H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"/>
+        </svg>
+      </div>
+      <h2 class="service-modal-title">Graphic Development</h2>
+      <p class="service-modal-body">
+        Combining creativity, technology, and market intelligence to develop distinctive graphics that elevate fashion collections. Every artwork is optimized for aesthetics, production efficiency, and commercial success.
+      </p>
+      <h3 style="font-family: var(--font-sans); font-size: 1.15rem; font-weight: 800; margin-top: 2rem; color: var(--lime-primary);">Services Include:</h3>
+      <ul class="service-modal-list">
+        <li>Fashion graphics &amp; artwork positioning</li>
+        <li>Print innovations - Placement &amp; All over print (AOP)</li>
+        <li>Digital print artwork &amp; high-density prints</li>
+        <li>Embroidery artwork development</li>
+        <li>Visual brand identity &amp; collection graphics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- POP-UP MODAL: FABRIC INNOVATION -->
+  <div class="service-modal-overlay" id="modal-fabric-innovation">
+    <div class="service-modal-card">
+      <button class="service-modal-close" aria-label="Close Modal">✕</button>
+      <div style="margin-bottom: 1.2rem;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--lime-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: rgba(153, 204, 0, 0.08); padding: 12px; border-radius: 16px; border: 1px solid rgba(153, 204, 0, 0.35);">
+          <path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0 0 12 2zm-1 14.5v-5l-4 4v-4l4-4h5"/>
+        </svg>
+      </div>
+      <h2 class="service-modal-title">Fabric Innovation</h2>
+      <p class="service-modal-body">
+        We develop innovative fabric solutions that combine sustainability, comfort, performance textiles, innovative blends, and advanced finishing solutions and durability to meet the evolving needs of global fashion and lifestyle brands.
+      </p>
+    </div>
+  </div>
 
   <!-- CENTERED FOOTER -->
   <!-- FOOTER -->
