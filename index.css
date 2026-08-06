@@ -2884,8 +2884,10 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem) !important;
-  margin-bottom: 2.5rem !important;
+  font-size: clamp(1.4rem, 3vw, 2.2rem) !important;
+  margin: 0 auto 2.5rem auto !important;
+  max-width: 1050px !important;
+  line-height: 1.35 !important;
   text-align: center !important;
   color: var(--navy-dark, #0B192C) !important;
   transition: color 0.3s ease !important;
