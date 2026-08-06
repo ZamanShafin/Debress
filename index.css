@@ -974,7 +974,9 @@ body[data-theme="light"] .nav-link.active,
   min-height: 520px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .editorial-sec1-image {
@@ -1026,12 +1028,12 @@ body[data-theme="light"] .nav-link.active,
   position: relative;
   z-index: 2;
   font-family: var(--font-body) !important;
-  font-size: 0.95rem !important;
-  line-height: 1.5;
+  font-size: 1.15rem !important;
+  line-height: 1.6;
   color: #4A5B6E !important;
-  max-width: 420px;
-  margin: 1.2rem 0 3rem auto;
-  text-align: left !important;
+  max-width: 600px;
+  margin: 2.2rem auto 0 auto !important;
+  text-align: center !important;
 }
 
 [data-theme="dark"] .editorial-sec1-body {
