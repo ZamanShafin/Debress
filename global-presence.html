@@ -432,12 +432,33 @@
         zoomControl: true
       });
 
-      // CARTO Dark Positron Tile Layer for #09325e Navy Land Color
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '<span style="color:#99CC00; font-weight:800;">Leaflet</span> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      // Set map container ocean background
+      mapElement.style.backgroundColor = '#041220';
+
+      // Base Carto Dark No-Labels Tile Layer
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: '<span style="color:#99CC00; font-weight:800;">Drēbes Global Vector Map</span> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
       }).addTo(map);
+
+      // Custom GeoJSON Vector Layer for EXACT #09325e Land Polygon Color
+      fetch('https://cdn.jsdelivr.net/gh/johan/world-geojson@master/countries.geo.json')
+        .then(res => res.json())
+        .then(geojson => {
+          L.geoJSON(geojson, {
+            style: {
+              fillColor: '#09325e',
+              fillOpacity: 0.96,
+              color: '#16497d',
+              weight: 0.8,
+              opacity: 0.9
+            }
+          }).addTo(map);
+        })
+        .catch(err => {
+          console.log('GeoJSON map fallback tile layer active', err);
+        });
 
       // Locations matching Drēbes operational hubs and pillars
       const locations = [
