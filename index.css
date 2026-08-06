@@ -3437,13 +3437,21 @@ img, video, svg, iframe {
   100% { box-shadow: 0 0 10px #99CC00, 0 0 20px rgba(153, 204, 0, 0.6); transform: scale(0.9); }
 }
 
-/* CARTO LIGHT TILE DARK MODE ADAPTATION */
-html[data-theme="dark"] #leaflet-global-map .leaflet-tile-pane {
-  filter: brightness(0.72) invert(1) contrast(2.8) hue-rotate(200deg) saturate(0.35);
+/* CARTO TILE MAP LAND COLOR #09325e STYLING */
+#leaflet-global-map {
+  background-color: #041220 !important;
+  background: #041220 !important;
+  border: 1.5px solid var(--lime-primary) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4) !important;
 }
 
+html[data-theme="dark"] #leaflet-global-map .leaflet-tile-pane,
+body[data-theme="dark"] #leaflet-global-map .leaflet-tile-pane,
+[data-theme="dark"] #leaflet-global-map .leaflet-tile-pane,
+html[data-theme="light"] #leaflet-global-map .leaflet-tile-pane,
+body[data-theme="light"] #leaflet-global-map .leaflet-tile-pane,
 [data-theme="light"] #leaflet-global-map .leaflet-tile-pane {
-  filter: none !important;
+  filter: sepia(1) hue-rotate(172deg) saturate(3.5) brightness(0.65) contrast(1.35) !important;
 }
 
 .leaflet-popup-content-wrapper {
