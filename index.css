@@ -633,20 +633,21 @@ body[data-theme="light"] .nav-link.active,
 }
 
 .hero-title .hero-location-text {
-  font-family: 'PPHatton', 'PPHattonItalic', 'PP Hatton', 'Hatton', serif !important;
-  font-style: italic !important;
-  font-weight: 500 !important;
-  font-size: 1.25em !important;
+  font-family: 'PPHatton', 'PP Hatton', 'Hatton', serif !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 1.15em !important;
   line-height: 1.15 !important;
   color: #FFFFFF !important;
   -webkit-text-stroke: 0 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.02em !important;
-  opacity: 0.98;
+  opacity: 1 !important;
 }
 
-[data-theme="dark"] .hero-title .hero-location-text {
-  color: var(--lime-primary) !important;
+[data-theme="dark"] .hero-title .hero-location-text,
+[data-theme="light"] .hero-title .hero-location-text {
+  color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .hero-title .accent-gold {
