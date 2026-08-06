@@ -2882,12 +2882,12 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
 .cert-marquee-title {
   font-family: var(--font-sans) !important;
   font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  font-size: clamp(1.4rem, 3vw, 2.2rem) !important;
+  font-size: clamp(1.05rem, 2.2vw, 1.55rem) !important;
   margin: 0 auto 2.5rem auto !important;
-  max-width: 1050px !important;
-  line-height: 1.35 !important;
+  max-width: 920px !important;
+  line-height: 1.4 !important;
   text-align: center !important;
   color: var(--navy-dark, #0B192C) !important;
   transition: color 0.3s ease !important;
