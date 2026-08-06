@@ -504,20 +504,89 @@ body[data-theme="light"] .menu-toggle-btn span,
   text-decoration: none !important;
   transition: all var(--transition-fast) !important;
   display: inline-block !important;
-body[data-theme="light"] .nav-link.active,
-[data-theme="light"] .nav-link.active {
-  background: rgba(153, 204, 0, 0.18) !important;
-  color: #0B192C !important;
-  border: 1.5px solid var(--lime-primary) !important;
-  box-shadow: 0 4px 18px rgba(153, 204, 0, 0.3) !important;
+  padding: 0.2rem 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  text-transform: none !important;
 }
 
-.nav-slash {
-  color: var(--lime-primary);
-  font-size: 0.95rem;
-  font-weight: 900;
-  opacity: 0.7;
-  user-select: none;
+.nav-link:hover, .nav-link.active {
+  color: var(--lime-primary) !important;
+  transform: translateX(8px) !important;
+  opacity: 1 !important;
+}
+
+.nav-contact-desc {
+  font-family: var(--font-serif) !important;
+  font-size: 1.1rem !important;
+  font-style: italic !important;
+  color: var(--lime-primary) !important;
+  margin-bottom: 1.2rem;
+}
+
+.nav-contact-block {
+  margin-bottom: 0.8rem;
+}
+
+.nav-contact-label {
+  font-family: var(--font-sans) !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  color: var(--text-muted) !important;
+  letter-spacing: 0.05em !important;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.nav-contact-email {
+  font-family: var(--font-sans) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--lime-primary) !important;
+  text-decoration: underline !important;
+}
+
+.nav-contact-phone {
+  font-family: var(--font-sans) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+/* MOBILE MEDIA QUERY FOR HAMBURGER MENU */
+@media (max-width: 900px) {
+  .nav-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .nav-column-contact {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    text-align: center;
+  }
+  
+  .nav-column, .nav-link, .nav-col-heading {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .nav-col-heading::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    transform: translateY(-2px) !important;
+  }
 }
 
 /* ==========================================
