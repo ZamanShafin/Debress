@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <!-- LEAFLET MAP CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- MAPLIBRE GL JS 3RD PARTY MAP ENGINE CSS -->
+  <link href="https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.css" rel="stylesheet" />
   
   <link rel="stylesheet" href="index.css?v=35.0">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -413,86 +413,104 @@
     </div>
   </footer>
 
-  <!-- LEAFLET MAP ENGINE SCRIPT -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="index.js"></script>
 
-  <!-- LEAFLET CARTO MAP INITIALIZATION SCRIPT -->
+  <!-- MAPLIBRE GL JS 3RD PARTY MAP INITIALIZATION SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mapElement = document.getElementById('leaflet-global-map');
       if (!mapElement) return;
 
-      // Initialize Leaflet Map centered on world view
-      const map = L.map('leaflet-global-map', {
-        center: [28, 12],
-        zoom: 2.2,
-        minZoom: 2,
-        maxZoom: 8,
-        zoomControl: true
+      // Initialize 3rd Party MapLibre GL Vector Map Engine
+      const map = new maplibregl.Map({
+        container: 'leaflet-global-map',
+        style: {
+          version: 8,
+          sources: {
+            'world-geojson': {
+              type: 'geojson',
+              data: 'https://cdn.jsdelivr.net/gh/johan/world-geojson@master/countries.geo.json'
+            }
+          },
+          layers: [
+            {
+              id: 'ocean-bg',
+              type: 'background',
+              paint: {
+                'background-color': '#041220'
+              }
+            },
+            {
+              id: 'land-polygons',
+              type: 'fill',
+              source: 'world-geojson',
+              paint: {
+                'fill-color': '#09325e',
+                'fill-opacity': 0.98
+              }
+            },
+            {
+              id: 'land-borders',
+              type: 'line',
+              source: 'world-geojson',
+              paint: {
+                'line-color': '#16497d',
+                'line-width': 0.8
+              }
+            }
+          ]
+        },
+        center: [12, 28],
+        zoom: 1.8,
+        minZoom: 1,
+        maxZoom: 8
       });
 
-      // Set map container ocean background
-      mapElement.style.backgroundColor = '#041220';
-
-      // Base Carto Dark No-Labels Tile Layer
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-        attribution: '<span style="color:#99CC00; font-weight:800;">Drēbes Global Vector Map</span> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-      }).addTo(map);
-
-      // Custom GeoJSON Vector Layer for EXACT #09325e Land Polygon Color
-      fetch('https://cdn.jsdelivr.net/gh/johan/world-geojson@master/countries.geo.json')
-        .then(res => res.json())
-        .then(geojson => {
-          L.geoJSON(geojson, {
-            style: {
-              fillColor: '#09325e',
-              fillOpacity: 0.96,
-              color: '#16497d',
-              weight: 0.8,
-              opacity: 0.9
-            }
-          }).addTo(map);
-        })
-        .catch(err => {
-          console.log('GeoJSON map fallback tile layer active', err);
-        });
+      // Add navigation zoom controls
+      map.addControl(new maplibregl.NavigationControl(), 'top-left');
 
       // Locations matching Drēbes operational hubs and pillars
       const locations = [
-        { name: 'New York (USA)', coords: [40.7128, -74.0060], categories: ['envision', 'actualize'], desc: 'Design & Trend Hub' },
-        { name: 'London (UK)', coords: [51.5074, -0.1278], categories: ['envision', 'showcase', 'actualize'], desc: 'Design, Display & Sourcing Hub' },
-        { name: 'Dubai (UAE)', coords: [25.2048, 55.2708], categories: ['envision'], desc: 'Middle East Design & Trend Hub' },
-        { name: 'Barcelona (Spain)', coords: [41.3851, 2.1734], categories: ['envision'], desc: 'European Design Studio' },
-        { name: 'Paris (France)', coords: [48.8566, 2.3522], categories: ['envision'], desc: 'Fashion Capital Design & Trend Studio' },
-        { name: 'Dhaka (Bangladesh HQ)', coords: [23.8103, 90.4125], categories: ['showcase', 'actualize'], desc: 'Display, Market & Sourcing HQ' },
-        { name: 'China (Shanghai)', coords: [31.2304, 121.4737], categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
-        { name: 'Hong Kong', coords: [22.3193, 114.1694], categories: ['actualize'], desc: 'Sourcing & Supply Chain Hub' },
-        { name: 'Vietnam (Ho Chi Minh)', coords: [10.8231, 106.6297], categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
-        { name: 'Turkey (Istanbul)', coords: [41.0082, 28.9784], categories: ['actualize'], desc: 'Eurasian Textile & Sourcing Hub' },
-        { name: 'Italy (Milan)', coords: [45.4642, 9.1900], categories: ['actualize'], desc: 'Luxury Apparel Manufacturing Hub' },
-        { name: 'India (Mumbai)', coords: [19.0760, 72.8777], categories: ['actualize'], desc: 'Apparel & Textile Sourcing Hub' },
-        { name: 'Australia (Sydney)', coords: [-33.8688, 151.2093], categories: ['actualize'], desc: 'Oceania Distribution & Sourcing Hub' }
+        { name: 'New York (USA)', coords: [-74.0060, 40.7128], categories: ['envision', 'actualize'], desc: 'Design & Trend Hub' },
+        { name: 'London (UK)', coords: [-0.1278, 51.5074], categories: ['envision', 'showcase', 'actualize'], desc: 'Design, Display & Sourcing Hub' },
+        { name: 'Dubai (UAE)', coords: [55.2708, 25.2048], categories: ['envision'], desc: 'Middle East Design & Trend Hub' },
+        { name: 'Barcelona (Spain)', coords: [2.1734, 41.3851], categories: ['envision'], desc: 'European Design Studio' },
+        { name: 'Paris (France)', coords: [2.3522, 48.8566], categories: ['envision'], desc: 'Fashion Capital Design & Trend Studio' },
+        { name: 'Dhaka (Bangladesh HQ)', coords: [90.4125, 23.8103], categories: ['showcase', 'actualize'], desc: 'Display, Market & Sourcing HQ' },
+        { name: 'China (Shanghai)', coords: [121.4737, 31.2304], categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
+        { name: 'Hong Kong', coords: [114.1694, 22.3193], categories: ['actualize'], desc: 'Sourcing & Supply Chain Hub' },
+        { name: 'Vietnam (Ho Chi Minh)', coords: [106.6297, 10.8231], categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
+        { name: 'Turkey (Istanbul)', coords: [28.9784, 41.0082], categories: ['actualize'], desc: 'Eurasian Textile & Sourcing Hub' },
+        { name: 'Italy (Milan)', coords: [9.1900, 45.4642], categories: ['actualize'], desc: 'Luxury Apparel Manufacturing Hub' },
+        { name: 'India (Mumbai)', coords: [72.8777, 19.0760], categories: ['actualize'], desc: 'Apparel & Textile Sourcing Hub' },
+        { name: 'Australia (Sydney)', coords: [151.2093, -33.8688], categories: ['actualize'], desc: 'Oceania Distribution & Sourcing Hub' }
       ];
-
-      // Glowing Lime Green Marker Icon
-      const markerCustomIcon = L.divIcon({
-        className: 'custom-div-icon',
-        html: "<div style='width:24px; height:24px; background:#99CC00; border-radius:50%; border:3px solid #FFFFFF; box-shadow:0 0 20px #99CC00, 0 0 35px rgba(153,204,0,0.9); animation: markerGlowPulse 1.8s ease-out infinite;'></div>",
-        iconSize: [24, 24],
-        iconAnchor: [12, 12]
-      });
 
       const markers = [];
 
       locations.forEach(loc => {
-        const marker = L.marker(loc.coords, { icon: markerCustomIcon })
-          .bindPopup(`<div style="padding:4px;"><strong style="font-family: Outfit, sans-serif; font-size: 0.95rem; color: #0A1624;">${loc.name}</strong><br><span style="font-size: 0.82rem; color: #4A5B6E;">${loc.desc}</span></div>`);
-        
+        const el = document.createElement('div');
+        el.className = 'maplibre-marker-point';
+        el.style.width = '24px';
+        el.style.height = '24px';
+        el.style.backgroundColor = '#99CC00';
+        el.style.borderRadius = '50%';
+        el.style.border = '3px solid #FFFFFF';
+        el.style.boxShadow = '0 0 20px #99CC00, 0 0 35px rgba(153,204,0,0.9)';
+        el.style.animation = 'markerGlowPulse 1.8s ease-out infinite';
+        el.style.cursor = 'pointer';
+
+        const popup = new maplibregl.Popup({ offset: 15 }).setHTML(
+          `<div style="padding:4px;"><strong style="font-family: Outfit, sans-serif; font-size: 0.95rem; color: #0A1624;">${loc.name}</strong><br><span style="font-size: 0.82rem; color: #4A5B6E;">${loc.desc}</span></div>`
+        );
+
+        const marker = new maplibregl.Marker({ element: el })
+          .setLngLat(loc.coords)
+          .setPopup(popup)
+          .addTo(map);
+
         marker.categoryList = loc.categories;
-        marker.addTo(map);
+        marker.markerElement = el;
         markers.push(marker);
       });
 
@@ -533,18 +551,16 @@
 
           markers.forEach(m => {
             if (filter === 'all' || m.categoryList.includes(filter)) {
-              m.addTo(map);
+              m.markerElement.style.display = 'block';
             } else {
-              map.removeLayer(m);
+              m.markerElement.style.display = 'none';
             }
           });
         });
       });
 
-      // Run initial button style calculation
       updateBtnStyles();
 
-      // Listen for Theme Toggle Button Clicks
       const themeToggle = document.getElementById('theme-toggle');
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
