@@ -2740,9 +2740,45 @@ body[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow,
     min-height: 48px !important;
   }
   
-  .contact-submit-btn svg {
-    width: 15px !important;
-    height: 15px !important;
+/* CONTACT DIRECTORY CARDS MOBILE OPTIMIZATION */
+.contact-dir-card {
+  padding: 2.2rem 1.8rem !important;
+  border-radius: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .contact-dir-card {
+    padding: 1.5rem 1.2rem !important;
+    border-radius: 16px !important;
+  }
+  .contact-dir-title {
+    font-size: 0.88rem !important;
+    letter-spacing: 0.06em !important;
+  }
+  .contact-dir-address {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  .contact-dir-phone {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
+  }
+  .contact-dir-label {
+    font-size: 0.72rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-dir-card {
+    padding: 1.25rem 1rem !important;
+  }
+  .contact-dir-phone {
+    font-size: 0.82rem !important;
   }
 }
 
