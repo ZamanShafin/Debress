@@ -557,28 +557,32 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
 .vertical-nav-links .nav-link:hover .nav-arrow {
   transform: translate(3px, -3px) scale(1.15) !important;
   opacity: 1 !important;
-  stroke: var(--lime-primary) !important;
+  stroke: #99CC00 !important;
 }
 
 .vertical-nav-links .nav-link.active,
-.vertical-nav-links .nav-link:hover {
-  color: var(--lime-primary) !important;
-  text-shadow: 0 0 16px rgba(153, 204, 0, 0.6) !important;
+.vertical-nav-links .nav-link:hover,
+html[data-theme="dark"] .vertical-nav-links .nav-link.active,
+body[data-theme="dark"] .vertical-nav-links .nav-link.active,
+[data-theme="dark"] .vertical-nav-links .nav-link.active,
+html[data-theme="dark"] .nav-link.active,
+body[data-theme="dark"] .nav-link.active,
+[data-theme="dark"] .nav-link.active {
+  color: #99CC00 !important;
+  text-shadow: 0 0 16px rgba(153, 204, 0, 0.7), 0 0 30px rgba(153, 204, 0, 0.4) !important;
   transform: translateY(-2px) scale(1.05) !important;
   font-weight: 800 !important;
 }
 
-html[data-theme="light"] .vertical-nav-links .nav-link.active,
-body[data-theme="light"] .vertical-nav-links .nav-link.active,
-[data-theme="light"] .vertical-nav-links .nav-link.active {
-  color: #7fa800 !important;
-  text-shadow: 0 0 12px rgba(127, 168, 0, 0.4) !important;
-}
-
-html[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow,
-body[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow,
-[data-theme="light"] .vertical-nav-links .nav-link.active .nav-arrow {
-  stroke: #7fa800 !important;
+.vertical-nav-links .nav-link.active .nav-num,
+.vertical-nav-links .nav-link.active .nav-text,
+html[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-num,
+body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-num,
+[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-num,
+html[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
+body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
+[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text {
+  color: #99CC00 !important;
 }
 
 @media (max-width: 640px) {
@@ -3075,7 +3079,34 @@ body[data-theme="light"] .nav-link:hover,
 body[data-theme="light"] .nav-link.active,
 [data-theme="light"] .nav-link:hover,
 [data-theme="light"] .nav-link.active {
-  color: var(--lime-primary) !important;
+  color: #99CC00 !important;
+}
+
+/* UNIVERSAL NEON #99CC00 ACTIVE & HOVER TAB STYLING */
+.nav-link.active,
+.nav-link.active .nav-text,
+.nav-link.active .nav-num,
+html[data-theme="dark"] .nav-link.active,
+body[data-theme="dark"] .nav-link.active,
+[data-theme="dark"] .nav-link.active,
+html[data-theme="dark"] .nav-link.active .nav-text,
+body[data-theme="dark"] .nav-link.active .nav-text,
+[data-theme="dark"] .nav-link.active .nav-text,
+html[data-theme="dark"] .nav-link.active .nav-num,
+body[data-theme="dark"] .nav-link.active .nav-num,
+[data-theme="dark"] .nav-link.active .nav-num {
+  color: #99CC00 !important;
+  text-shadow: 0 0 16px rgba(153, 204, 0, 0.7), 0 0 30px rgba(153, 204, 0, 0.4) !important;
+  font-weight: 800 !important;
+}
+
+.nav-link.active .nav-arrow,
+html[data-theme="dark"] .nav-link.active .nav-arrow,
+body[data-theme="dark"] .nav-link.active .nav-arrow,
+[data-theme="dark"] .nav-link.active .nav-arrow {
+  stroke: #99CC00 !important;
+  color: #99CC00 !important;
+  opacity: 1 !important;
 }
 
 /* ==========================================
