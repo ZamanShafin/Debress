@@ -417,13 +417,13 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="index.js"></script>
 
-  <!-- LEAFLET HIGH-PRECISION NO-LABEL CARTO MAP INITIALIZATION SCRIPT -->
+  <!-- LEAFLET HIGH-PRECISION GEOJSON #0E1C2B CARTO MAP INITIALIZATION SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mapElement = document.getElementById('leaflet-global-map');
       if (!mapElement) return;
 
-      // Initialize Leaflet Map with no attribution control (clean luxury presentation)
+      // Initialize Leaflet Map with no attribution control
       const map = L.map('leaflet-global-map', {
         center: [28, 12],
         zoom: 2.2,
@@ -434,8 +434,9 @@
       });
 
       let currentTileLayer = null;
+      let landGeoJsonLayer = null;
 
-      function updateTileLayer() {
+      function updateMapStyle() {
         const isLight = document.documentElement.getAttribute('data-theme') === 'light';
         const tileUrl = isLight 
           ? 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png'
@@ -450,10 +451,35 @@
           maxZoom: 19
         }).addTo(map);
 
-        mapElement.style.backgroundColor = isLight ? '#FAF9F5' : '#05101C';
+        if (landGeoJsonLayer) {
+          landGeoJsonLayer.setStyle({
+            fillColor: isLight ? '#DCE0E8' : '#0E1C2B',
+            color: isLight ? '#BDC4D0' : '#1D334C'
+          });
+        }
+
+        mapElement.style.backgroundColor = isLight ? '#FAF9F5' : '#050E17';
       }
 
-      updateTileLayer();
+      // Fetch & Render High-Precision Vector GeoJSON Landmass in #0E1C2B
+      fetch('https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_land.geojson')
+        .then(r => r.json())
+        .then(geojson => {
+          const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+          landGeoJsonLayer = L.geoJSON(geojson, {
+            style: {
+              fillColor: isLight ? '#DCE0E8' : '#0E1C2B',
+              fillOpacity: 1,
+              color: isLight ? '#BDC4D0' : '#1D334C',
+              weight: 1.2
+            }
+          }).addTo(map);
+
+          markers.forEach(m => m.bringToFront());
+        })
+        .catch(e => console.log('Land GeoJSON fallback active'));
+
+      updateMapStyle();
 
       // Locations matching Drēbes operational hubs and pillars
       const locations = [
@@ -543,7 +569,7 @@
         themeToggle.addEventListener('click', () => {
           setTimeout(() => {
             updateBtnStyles();
-            updateTileLayer();
+            updateMapStyle();
           }, 60);
         });
       }

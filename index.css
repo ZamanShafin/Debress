@@ -2948,17 +2948,22 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   color: #0B192C !important;
 }
 
-/* LUXURY LEAFLET HIGH-PRECISION NO-LABEL MAP ENGINE */
+/* LUXURY LEAFLET HIGH-PRECISION MAP ENGINE */
 .leaflet-control-attribution {
   display: none !important;
 }
 
 .leaflet-container {
-  background-color: #05101C !important;
+  background-color: #050E17 !important;
   font-family: var(--font-sans), 'Outfit', sans-serif !important;
 }
 
-[data-theme="light"] .leaflet-container {
+[data-theme="dark"] #leaflet-global-map {
+  background-color: #050E17 !important;
+}
+
+[data-theme="light"] .leaflet-container,
+[data-theme="light"] #leaflet-global-map {
   background-color: #FAF9F5 !important;
 }
 
