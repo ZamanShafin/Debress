@@ -1547,10 +1547,13 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
 }
 
 .sec4-partner-text {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.4rem;
-  color: var(--navy-dark);
+  font-family: 'PPHatton', 'PP Hatton', 'Hatton', serif !important;
+  font-style: normal !important;
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  color: #99CC00 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
 }
 
 .sec4-strategy-box {
