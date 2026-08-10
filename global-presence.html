@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="index.css?v=118.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="index.css?v=119.0">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
 
@@ -190,69 +191,8 @@
         </button>
       </div>
 
-      <!-- LUXURY INTERACTIVE SVG VECTOR WORLD MAP CONTAINER -->
-      <div class="vector-map-card" id="vector-map-card">
-        <svg class="vector-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" id="vector-world-svg">
-          <defs>
-            <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-
-          <!-- Grid Lines Overlay -->
-          <g class="map-grid-lines" stroke="var(--grid-line, rgba(255,255,255,0.08))" stroke-width="0.7">
-            <line x1="0" y1="125" x2="1000" y2="125" stroke-dasharray="3 3"/>
-            <line x1="0" y1="250" x2="1000" y2="250" stroke-dasharray="3 3"/>
-            <line x1="0" y1="375" x2="1000" y2="375" stroke-dasharray="3 3"/>
-            <line x1="250" y1="0" x2="250" y2="500" stroke-dasharray="3 3"/>
-            <line x1="500" y1="0" x2="500" y2="500" stroke-dasharray="3 3"/>
-            <line x1="750" y1="0" x2="750" y2="500" stroke-dasharray="3 3"/>
-          </g>
-
-          <!-- World Continents Landmass Group -->
-          <g class="world-landmass">
-            <!-- NORTH AMERICA & GREENLAND -->
-            <path d="M140,40 L280,35 L330,60 L360,40 L380,80 L320,110 L280,100 L260,130 L280,150 L250,170 L210,140 L190,170 L170,160 L140,200 L110,180 L80,140 L60,110 L90,60 Z" />
-            <path d="M370,15 L430,10 L440,35 L400,65 L360,50 Z" />
-            <!-- CENTRAL AMERICA & CARIBBEAN -->
-            <path d="M220,175 L260,195 L275,225 L265,235 L245,215 L225,190 Z" />
-            <!-- SOUTH AMERICA -->
-            <path d="M270,240 L315,245 L360,270 L370,310 L340,370 L300,430 L270,420 L260,370 L240,300 L255,260 Z" />
-            <!-- EUROPE & UK & ICELAND -->
-            <path d="M460,70 L515,65 L545,55 L570,75 L560,105 L540,115 L525,145 L490,140 L470,120 L480,100 L460,90 Z" />
-            <path d="M475,85 L490,75 L495,95 L480,105 Z" />
-            <path d="M420,45 L440,42 L435,55 L415,55 Z" />
-            <!-- AFRICA & MADAGASCAR -->
-            <path d="M460,145 L540,140 L585,175 L625,210 L590,265 L555,340 L510,345 L475,280 L445,215 L450,170 Z" />
-            <path d="M625,290 L635,285 L645,325 L630,335 Z" />
-            <!-- ASIA & MIDDLE EAST -->
-            <path d="M570,70 L650,55 L780,45 L910,50 L940,90 L920,135 L880,130 L840,165 L800,160 L780,200 L730,225 L680,215 L660,185 L600,175 L565,115 Z" />
-            <path d="M575,175 L620,170 L635,200 L610,230 L570,215 Z" />
-            <!-- JAPAN & TAIWAN & PHILIPPINES & INDONESIA -->
-            <path d="M885,115 L900,110 L910,145 L895,150 Z" />
-            <path d="M825,205 L835,200 L830,220 L820,220 Z" />
-            <path d="M830,230 L845,225 L840,260 L825,255 Z" />
-            <path d="M780,250 L870,260 L880,275 L770,265 Z" />
-            <!-- AUSTRALIA & NEW ZEALAND -->
-            <path d="M820,310 L910,300 L935,340 L915,395 L855,390 L810,360 L805,330 Z" />
-            <path d="M945,370 L960,365 L965,400 L945,405 Z" />
-          </g>
-
-          <!-- Interactive Marker Group Container -->
-          <g id="vector-markers-layer"></g>
-        </svg>
-
-        <!-- Luxury Floating Glass Tooltip -->
-        <div id="vector-map-tooltip" class="vector-tooltip">
-          <div class="tooltip-title" id="tooltip-title">City</div>
-          <div class="tooltip-badges" id="tooltip-badges"></div>
-          <div class="tooltip-desc" id="tooltip-desc">Description</div>
-        </div>
-      </div>
+      <!-- HIGH PRECISION LEAFLET CARTO MAP CONTAINER -->
+      <div id="leaflet-global-map" style="width: 100% !important; height: 560px !important; border-radius: 20px !important; overflow: hidden !important; border: 1.5px solid var(--border-light) !important; position: relative !important;"></div>
     </section>
 
     <!-- SECTION 2: 3-PILLAR OPERATIONAL NETWORK (WE ENVISION, WE SHOWCASE, WE ACTUALIZE) -->
@@ -473,95 +413,85 @@
     </div>
   </footer>
 
-  <!-- INDEX JS -->
+  <!-- LEAFLET MAP ENGINE SCRIPT -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="index.js"></script>
 
-  <!-- LUXURY NATIVE SVG VECTOR WORLD MAP ENGINE -->
+  <!-- LEAFLET HIGH-PRECISION NO-LABEL CARTO MAP INITIALIZATION SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const markersLayer = document.getElementById('vector-markers-layer');
-      const tooltip = document.getElementById('vector-map-tooltip');
-      const mapCard = document.getElementById('vector-map-card');
-      const svg = document.getElementById('vector-world-svg');
+      const mapElement = document.getElementById('leaflet-global-map');
+      if (!mapElement) return;
 
-      if (!markersLayer || !mapCard || !svg) return;
-
-      const tooltipTitle = document.getElementById('tooltip-title');
-      const tooltipBadges = document.getElementById('tooltip-badges');
-      const tooltipDesc = document.getElementById('tooltip-desc');
-
-      // Drēbes Operational Hubs Vector Coordinates
-      const locations = [
-        { name: 'New York (USA)', x: 294, y: 137, categories: ['envision', 'actualize'], desc: 'Design & Trend Hub' },
-        { name: 'London (UK)', x: 495, y: 102, categories: ['envision', 'showcase', 'actualize'], desc: 'Design, Display & Sourcing Hub' },
-        { name: 'Paris (France)', x: 502, y: 114, categories: ['envision'], desc: 'Fashion Capital Design Studio' },
-        { name: 'Barcelona (Spain)', x: 495, y: 128, categories: ['envision'], desc: 'European Design Studio' },
-        { name: 'Milan (Italy)', x: 518, y: 120, categories: ['actualize'], desc: 'Luxury Apparel Manufacturing Hub' },
-        { name: 'Istanbul (Turkey)', x: 575, y: 136, categories: ['actualize'], desc: 'Eurasian Textile & Sourcing Hub' },
-        { name: 'Dubai (UAE)', x: 635, y: 182, categories: ['envision'], desc: 'Middle East Design & Trend Hub' },
-        { name: 'Dhaka (Bangladesh HQ)', x: 748, y: 186, categories: ['showcase', 'actualize'], desc: 'Display, Market & Sourcing HQ' },
-        { name: 'Mumbai (India)', x: 700, y: 198, categories: ['actualize'], desc: 'Apparel & Textile Sourcing Hub' },
-        { name: 'Shanghai (China)', x: 840, y: 160, categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
-        { name: 'Hong Kong', x: 825, y: 188, categories: ['actualize'], desc: 'Sourcing & Supply Chain Hub' },
-        { name: 'Ho Chi Minh (Vietnam)', x: 805, y: 218, categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
-        { name: 'Sydney (Australia)', x: 915, y: 348, categories: ['actualize'], desc: 'Oceania Distribution & Sourcing Hub' }
-      ];
-
-      // Dynamically Render Glowing Neon Markers
-      locations.forEach((loc, i) => {
-        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        g.setAttribute('class', 'vector-marker');
-        g.setAttribute('data-categories', loc.categories.join(' '));
-
-        // Pulsing Ring
-        const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        ring.setAttribute('cx', loc.x);
-        ring.setAttribute('cy', loc.y);
-        ring.setAttribute('r', '6');
-        ring.setAttribute('fill', 'none');
-        ring.setAttribute('stroke', '#99CC00');
-        ring.setAttribute('stroke-width', '1.8');
-        ring.setAttribute('class', 'marker-ring-pulse');
-        ring.style.animationDelay = `${(i * 0.22).toFixed(2)}s`;
-
-        // Glowing Solid Core
-        const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        core.setAttribute('cx', loc.x);
-        core.setAttribute('cy', loc.y);
-        core.setAttribute('r', '5.5');
-        core.setAttribute('fill', '#99CC00');
-        core.setAttribute('stroke', '#FFFFFF');
-        core.setAttribute('stroke-width', '1.5');
-        core.setAttribute('filter', 'url(#neon-glow)');
-
-        g.appendChild(ring);
-        g.appendChild(core);
-
-        // Hover & Mouse Movements for Glass Tooltip
-        g.addEventListener('mouseenter', () => {
-          tooltipTitle.textContent = loc.name;
-          tooltipDesc.textContent = loc.desc;
-          tooltipBadges.innerHTML = loc.categories.map(c => `<span class="tooltip-badge">WE ${c.toUpperCase()}</span>`).join('');
-
-          const cardRect = mapCard.getBoundingClientRect();
-          const svgRect = svg.getBoundingClientRect();
-
-          const posX = (loc.x / 1000) * svgRect.width + (svgRect.left - cardRect.left);
-          const posY = (loc.y / 500) * svgRect.height + (svgRect.top - cardRect.top);
-
-          tooltip.style.left = `${posX}px`;
-          tooltip.style.top = `${posY}px`;
-          tooltip.classList.add('tooltip-active');
-        });
-
-        g.addEventListener('mouseleave', () => {
-          tooltip.classList.remove('tooltip-active');
-        });
-
-        markersLayer.appendChild(g);
+      // Initialize Leaflet Map with no attribution control (clean luxury presentation)
+      const map = L.map('leaflet-global-map', {
+        center: [28, 12],
+        zoom: 2.2,
+        minZoom: 2,
+        maxZoom: 8,
+        zoomControl: true,
+        attributionControl: false
       });
 
-      // Layer Filter Logic & Theme Sync Engine
+      let currentTileLayer = null;
+
+      function updateTileLayer() {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const tileUrl = isLight 
+          ? 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png'
+          : 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png';
+
+        if (currentTileLayer) {
+          map.removeLayer(currentTileLayer);
+        }
+
+        currentTileLayer = L.tileLayer(tileUrl, {
+          subdomains: 'abcd',
+          maxZoom: 19
+        }).addTo(map);
+
+        mapElement.style.backgroundColor = isLight ? '#FAF9F5' : '#05101C';
+      }
+
+      updateTileLayer();
+
+      // Locations matching Drēbes operational hubs and pillars
+      const locations = [
+        { name: 'New York (USA)', coords: [40.7128, -74.0060], categories: ['envision', 'actualize'], desc: 'Design & Trend Hub' },
+        { name: 'London (UK)', coords: [51.5074, -0.1278], categories: ['envision', 'showcase', 'actualize'], desc: 'Design, Display & Sourcing Hub' },
+        { name: 'Dubai (UAE)', coords: [25.2048, 55.2708], categories: ['envision'], desc: 'Middle East Design & Trend Hub' },
+        { name: 'Barcelona (Spain)', coords: [41.3851, 2.1734], categories: ['envision'], desc: 'European Design Studio' },
+        { name: 'Paris (France)', coords: [48.8566, 2.3522], categories: ['envision'], desc: 'Fashion Capital Design Studio' },
+        { name: 'Dhaka (Bangladesh HQ)', coords: [23.8103, 90.4125], categories: ['showcase', 'actualize'], desc: 'Display, Market & Sourcing HQ' },
+        { name: 'China (Shanghai)', coords: [31.2304, 121.4737], categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
+        { name: 'Hong Kong', coords: [22.3193, 114.1694], categories: ['actualize'], desc: 'Sourcing & Supply Chain Hub' },
+        { name: 'Vietnam (Ho Chi Minh)', coords: [10.8231, 106.6297], categories: ['actualize'], desc: 'Manufacturing & Sourcing Hub' },
+        { name: 'Turkey (Istanbul)', coords: [41.0082, 28.9784], categories: ['actualize'], desc: 'Eurasian Textile & Sourcing Hub' },
+        { name: 'Italy (Milan)', coords: [45.4642, 9.1900], categories: ['actualize'], desc: 'Luxury Apparel Manufacturing Hub' },
+        { name: 'India (Mumbai)', coords: [19.0760, 72.8777], categories: ['actualize'], desc: 'Apparel & Textile Sourcing Hub' },
+        { name: 'Australia (Sydney)', coords: [-33.8688, 151.2093], categories: ['actualize'], desc: 'Oceania Distribution & Sourcing Hub' }
+      ];
+
+      // Glowing Lime Green Marker Icon
+      const markerCustomIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='width:24px; height:24px; background:#99CC00; border-radius:50%; border:3px solid #FFFFFF; box-shadow:0 0 20px #99CC00, 0 0 35px rgba(153,204,0,0.9); animation: markerGlowPulse 1.8s ease-out infinite;'></div>",
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+
+      const markers = [];
+
+      locations.forEach(loc => {
+        const marker = L.marker(loc.coords, { icon: markerCustomIcon })
+          .bindPopup(`<div style="padding:6px; text-align:center;"><strong style="font-family: Outfit, sans-serif; font-size: 1rem; color: #99CC00;">${loc.name}</strong><br><span style="font-size: 0.85rem; opacity:0.9;">${loc.desc}</span></div>`);
+        
+        marker.categoryList = loc.categories;
+        marker.addTo(map);
+        markers.push(marker);
+      });
+
+      // Filter Buttons & Theme Engine
       const filterBtns = document.querySelectorAll('.map-filter-btn');
 
       function updateBtnStyles() {
@@ -595,14 +525,12 @@
           updateBtnStyles();
 
           const filter = btn.getAttribute('data-filter');
-          const markers = document.querySelectorAll('.vector-marker');
 
           markers.forEach(m => {
-            const cats = m.getAttribute('data-categories').split(' ');
-            if (filter === 'all' || cats.includes(filter)) {
-              m.classList.remove('hidden-marker');
+            if (filter === 'all' || m.categoryList.includes(filter)) {
+              m.addTo(map);
             } else {
-              m.classList.add('hidden-marker');
+              map.removeLayer(m);
             }
           });
         });
@@ -613,7 +541,10 @@
       const themeToggle = document.getElementById('theme-toggle');
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-          setTimeout(updateBtnStyles, 60);
+          setTimeout(() => {
+            updateBtnStyles();
+            updateTileLayer();
+          }, 60);
         });
       }
     });

@@ -2948,7 +2948,46 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   color: #0B192C !important;
 }
 
-/* LUXURY INTERACTIVE SVG VECTOR WORLD MAP CONTAINER */
+/* LUXURY LEAFLET HIGH-PRECISION NO-LABEL MAP ENGINE */
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-container {
+  background-color: #05101C !important;
+  font-family: var(--font-sans), 'Outfit', sans-serif !important;
+}
+
+[data-theme="light"] .leaflet-container {
+  background-color: #FAF9F5 !important;
+}
+
+/* SLEEK LEAFLET POPUP GLASS STYLING */
+.leaflet-popup-content-wrapper {
+  background: rgba(7, 16, 28, 0.94) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid #99CC00 !important;
+  border-radius: 14px !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(153, 204, 0, 0.3) !important;
+  padding: 0.4rem !important;
+}
+
+[data-theme="light"] .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #0B192C !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 0 15px rgba(153, 204, 0, 0.3) !important;
+}
+
+.leaflet-popup-tip {
+  background: #99CC00 !important;
+}
+
+.custom-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
 .vector-map-card {
   width: 100% !important;
   position: relative !important;
