@@ -512,7 +512,9 @@ body[data-theme="light"] .nav-menu.vertical-nav-drawer,
   border: none !important;
   border-radius: 0 !important;
   text-transform: uppercase !important;
-  width: auto;
+  width: max-content !important;
+  max-width: fit-content !important;
+  margin: 0 auto !important;
   text-align: center !important;
   position: relative !important;
   opacity: 0;
@@ -611,12 +613,25 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   color: #99CC00 !important;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .vertical-nav-links {
     align-items: center !important;
+    width: 100% !important;
   }
   .vertical-nav-links .nav-link {
+    width: max-content !important;
+    max-width: fit-content !important;
+    margin: 0 auto !important;
     justify-content: center !important;
+    display: inline-flex !important;
+    position: relative !important;
+  }
+  .vertical-nav-links .nav-arrow {
+    position: absolute !important;
+    left: 100% !important;
+    margin-left: 0.45rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
   .vertical-nav-links .nav-link:hover,
   .vertical-nav-links .nav-link.active {
