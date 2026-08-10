@@ -417,51 +417,40 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="index.js"></script>
 
-  <!-- LEAFLET HIGH-PRECISION GEOJSON #0E1C2B CARTO MAP INITIALIZATION SCRIPT -->
+  <!-- LEAFLET HIGH-PRECISION PURE VECTOR MAP INITIALIZATION SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mapElement = document.getElementById('leaflet-global-map');
       if (!mapElement) return;
 
-      // Initialize Leaflet Map with no attribution control
+      // Initialize Leaflet Map without raster tile layer (prevents black tile artifacts)
       const map = L.map('leaflet-global-map', {
-        center: [28, 12],
+        center: [25, 15],
         zoom: 2.2,
         minZoom: 2,
         maxZoom: 8,
         zoomControl: true,
-        attributionControl: false
+        attributionControl: false,
+        maxBounds: [[-85, -200], [85, 200]],
+        maxBoundsViscosity: 1.0
       });
 
-      let currentTileLayer = null;
       let landGeoJsonLayer = null;
 
       function updateMapStyle() {
         const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        const tileUrl = isLight 
-          ? 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png'
-          : 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png';
-
-        if (currentTileLayer) {
-          map.removeLayer(currentTileLayer);
-        }
-
-        currentTileLayer = L.tileLayer(tileUrl, {
-          subdomains: 'abcd',
-          maxZoom: 19
-        }).addTo(map);
 
         if (landGeoJsonLayer) {
           landGeoJsonLayer.setStyle({
             fillColor: isLight ? '#DCE0E8' : '#0E1C2B',
-            color: isLight ? '#BDC4D0' : '#1D334C'
+            color: isLight ? '#B5BECB' : '#1A2F45'
           });
         }
 
         mapElement.style.backgroundColor = isLight ? '#FAF9F5' : '#050E17';
       }
 
-      // Fetch & Render Full World Countries GeoJSON Landmass in #0E1C2B for ALL landmasses
+      // Fetch & Render Full World Countries Vector GeoJSON Landmass (100% Uniform #0E1C2B Color)
       fetch('https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json')
         .then(r => r.json())
         .then(geojson => {
@@ -470,7 +459,7 @@
             style: {
               fillColor: isLight ? '#DCE0E8' : '#0E1C2B',
               fillOpacity: 1,
-              color: isLight ? '#BDC4D0' : '#1A2F45',
+              color: isLight ? '#B5BECB' : '#1A2F45',
               weight: 0.8
             },
             onEachFeature: (feature, layer) => {
