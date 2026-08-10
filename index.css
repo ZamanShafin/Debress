@@ -541,21 +541,24 @@ body[data-theme="light"] .vertical-nav-links .nav-link,
 .vertical-nav-links .nav-arrow {
   position: absolute !important;
   left: 100% !important;
-  margin-left: 0.4rem !important;
+  margin-left: 0.45rem !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  width: 16px !important;
+  width: 14px !important;
   height: 16px !important;
-  stroke: var(--lime-primary);
+  fill: var(--lime-primary) !important;
+  color: var(--lime-primary) !important;
+  stroke: none !important;
   opacity: 0.85;
-  transition: transform var(--transition-fast), opacity var(--transition-fast), stroke var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-fast), fill var(--transition-fast);
 }
 
 .vertical-nav-links .nav-link.active .nav-arrow,
 .vertical-nav-links .nav-link:hover .nav-arrow {
   transform: translateY(-50%) translate(3px, -3px) scale(1.15) !important;
   opacity: 1 !important;
-  stroke: #99CC00 !important;
+  fill: #99CC00 !important;
+  color: #99CC00 !important;
 }
 
 .vertical-nav-links .nav-link.active,
@@ -3109,7 +3112,8 @@ body[data-theme="dark"] .nav-link.active .nav-num,
 html[data-theme="dark"] .nav-link.active .nav-arrow,
 body[data-theme="dark"] .nav-link.active .nav-arrow,
 [data-theme="dark"] .nav-link.active .nav-arrow {
-  stroke: #99CC00 !important;
+  stroke: none !important;
+  fill: #99CC00 !important;
   color: #99CC00 !important;
   opacity: 1 !important;
 }
