@@ -2948,6 +2948,147 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   color: #0B192C !important;
 }
 
+/* LUXURY INTERACTIVE SVG VECTOR WORLD MAP CONTAINER */
+.vector-map-card {
+  width: 100% !important;
+  position: relative !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 1.5px solid var(--border-light) !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3) !important;
+  background: var(--vector-map-bg, #040D18) !important;
+  transition: background 0.3s ease, border-color 0.3s ease !important;
+  padding: 1.5rem 1rem !important;
+}
+
+[data-theme="dark"] .vector-map-card {
+  --vector-map-bg: #05101C;
+  --land-fill: #132438;
+  --land-stroke: #1F3652;
+  --land-hover: #1E3758;
+  --grid-line: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .vector-map-card {
+  --vector-map-bg: #FAF9F5;
+  --land-fill: #E2E6ED;
+  --land-stroke: #C9CEDA;
+  --land-hover: #D0D6E2;
+  --grid-line: rgba(11, 25, 44, 0.08);
+}
+
+.vector-map-svg {
+  width: 100%;
+  height: auto;
+  min-height: 440px;
+  max-height: 580px;
+  display: block;
+}
+
+.world-landmass path {
+  fill: var(--land-fill);
+  stroke: var(--land-stroke);
+  stroke-width: 0.8px;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.world-landmass path:hover {
+  fill: var(--land-hover);
+}
+
+/* GLOWING NEON MARKER PULSE ANIMATION */
+.vector-marker {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.vector-marker.hidden-marker {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: scale(0);
+}
+
+.marker-ring-pulse {
+  animation: svgMarkerPulse 2s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes svgMarkerPulse {
+  0% {
+    r: 6;
+    opacity: 0.9;
+  }
+  100% {
+    r: 22;
+    opacity: 0;
+  }
+}
+
+/* FLOATING LUXURY GLASS TOOLTIP */
+.vector-tooltip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(7, 16, 28, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid #99CC00;
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(153, 204, 0, 0.3);
+  opacity: 0;
+  transform: translate(-50%, -120%) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  min-width: 200px;
+  max-width: 280px;
+  text-align: center;
+}
+
+[data-theme="light"] .vector-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #99CC00;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 0 15px rgba(153, 204, 0, 0.3);
+}
+
+.vector-tooltip.tooltip-active {
+  opacity: 1;
+  transform: translate(-50%, -130%) scale(1);
+}
+
+.tooltip-title {
+  font-family: var(--font-sans), 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #99CC00;
+  letter-spacing: 0.04em;
+}
+
+.tooltip-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: 0.4rem 0;
+}
+
+.tooltip-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  background: rgba(153, 204, 0, 0.2);
+  color: #99CC00;
+  border: 1px solid rgba(153, 204, 0, 0.4);
+  text-transform: uppercase;
+}
+
+.tooltip-desc {
+  font-family: var(--font-sans), 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-muted, rgba(255, 255, 255, 0.8));
+  margin-top: 0.2rem;
+}
+
 .cert-marquee-container {
   display: flex !important;
   overflow: hidden !important;
