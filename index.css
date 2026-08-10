@@ -1269,9 +1269,9 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
 }
 
 .sec3-header-centered .sec3-tag {
-  font-family: 'PPHatton', 'PPHattonItalic', 'PP Hatton', 'Hatton', serif !important;
-  font-style: italic !important;
-  font-size: 1.3rem !important;
+  font-family: 'PPHatton', 'PP Hatton', 'Hatton', serif !important;
+  font-style: normal !important;
+  font-size: 1.25rem !important;
   font-weight: 500 !important;
   color: #99CC00 !important;
   letter-spacing: 0.04em !important;
@@ -1564,12 +1564,13 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
 }
 
 .sec5-tag {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--lime-primary);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: 'PPHatton', 'PP Hatton', 'Hatton', serif !important;
+  font-style: normal !important;
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  color: #99CC00 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
   margin-bottom: 1rem;
 }
 
