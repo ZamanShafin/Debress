@@ -461,8 +461,8 @@
         mapElement.style.backgroundColor = isLight ? '#FAF9F5' : '#050E17';
       }
 
-      // Fetch & Render High-Precision Vector GeoJSON Landmass in #0E1C2B
-      fetch('https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_land.geojson')
+      // Fetch & Render Full World Countries GeoJSON Landmass in #0E1C2B for ALL landmasses
+      fetch('https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json')
         .then(r => r.json())
         .then(geojson => {
           const isLight = document.documentElement.getAttribute('data-theme') === 'light';
@@ -470,8 +470,28 @@
             style: {
               fillColor: isLight ? '#DCE0E8' : '#0E1C2B',
               fillOpacity: 1,
-              color: isLight ? '#BDC4D0' : '#1D334C',
-              weight: 1.2
+              color: isLight ? '#BDC4D0' : '#1A2F45',
+              weight: 0.8
+            },
+            onEachFeature: (feature, layer) => {
+              layer.on({
+                mouseover: (e) => {
+                  const l = e.target;
+                  const lightMode = document.documentElement.getAttribute('data-theme') === 'light';
+                  l.setStyle({
+                    fillColor: lightMode ? '#C8CFDC' : '#14293E',
+                    fillOpacity: 1
+                  });
+                },
+                mouseout: (e) => {
+                  const lightMode = document.documentElement.getAttribute('data-theme') === 'light';
+                  e.target.setStyle({
+                    fillColor: lightMode ? '#DCE0E8' : '#0E1C2B',
+                    color: lightMode ? '#BDC4D0' : '#1A2F45',
+                    weight: 0.8
+                  });
+                }
+              });
             }
           }).addTo(map);
 
