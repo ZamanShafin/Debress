@@ -3780,9 +3780,10 @@ img, video, svg, iframe {
 .dongyi-trust-section,
 section.bg-white.section-padding.border-t {
   width: 100% !important;
+  max-width: 100vw !important;
   position: relative !important;
   overflow: hidden !important;
-  padding: 4.5rem 1.5rem 5.5rem 1.5rem !important;
+  padding: 4.5rem 0 5.5rem 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   background: transparent !important;
 }
@@ -3796,13 +3797,14 @@ section.bg-white.section-padding.border-t {
 .dongyi-trust-container {
   max-width: 1440px !important;
   margin: 0 auto !important;
+  padding: 0 2rem !important;
 }
 
 .dongyi-trust-header {
   display: flex !important;
   align-items: flex-end !important;
   justify-content: space-between !important;
-  margin-bottom: 3rem !important;
+  margin-bottom: 2.8rem !important;
 }
 
 .dongyi-trust-tag {
@@ -3845,12 +3847,12 @@ section.bg-white.section-padding.border-t {
 .dongyi-marquee-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 24px !important;
+  gap: 28px !important;
   width: 100% !important;
   overflow: hidden !important;
   position: relative !important;
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
 }
 
 .dongyi-marquee-row {
@@ -3863,6 +3865,7 @@ section.bg-white.section-padding.border-t {
 .dongyi-marquee-track {
   display: flex !important;
   flex-direction: row !important;
+  flex-wrap: nowrap !important;
   align-items: center !important;
   gap: 64px !important;
   width: max-content !important;
@@ -3870,11 +3873,11 @@ section.bg-white.section-padding.border-t {
 }
 
 .dongyi-marquee-track.marquee-fwd {
-  animation: dongyiMarqueeFwd 32s linear infinite !important;
+  animation: dongyiMarqueeFwd 30s linear infinite !important;
 }
 
 .dongyi-marquee-track.marquee-rev {
-  animation: dongyiMarqueeRev 32s linear infinite !important;
+  animation: dongyiMarqueeRev 30s linear infinite !important;
 }
 
 .dongyi-marquee-wrapper:hover .dongyi-marquee-track {
@@ -3886,7 +3889,9 @@ section.bg-white.section-padding.border-t {
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  opacity: 0.45 !important;
+  width: 180px !important;
+  height: 64px !important;
+  opacity: 0.55 !important;
   cursor: pointer !important;
   transition: opacity 0.3s ease, transform 0.3s ease !important;
   user-select: none !important;
@@ -3898,30 +3903,34 @@ section.bg-white.section-padding.border-t {
 }
 
 .dongyi-client-img {
-  height: 56px !important;
-  max-width: 210px !important;
+  max-height: 52px !important;
+  max-width: 170px !important;
+  width: auto !important;
+  height: auto !important;
   object-fit: contain !important;
   display: block !important;
   transition: all 0.3s ease !important;
   pointer-events: none !important;
 }
 
-@media (min-width: 768px) {
-  .dongyi-client-img {
-    height: 68px !important;
+@media (max-width: 768px) {
+  .dongyi-trust-section {
+    padding: 3.5rem 0 4rem 0 !important;
   }
-}
-
-[data-theme="dark"] .dongyi-client-img {
-  filter: brightness(0) invert(1) !important;
-}
-
-[data-theme="light"] .dongyi-client-img {
-  filter: grayscale(100%) !important;
-}
-
-[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img {
-  filter: grayscale(0%) !important;
+  .dongyi-marquee-wrapper {
+    gap: 20px !important;
+  }
+  .dongyi-marquee-track {
+    gap: 40px !important;
+  }
+  .dongyi-client-item {
+    width: 130px !important;
+    height: 48px !important;
+  }
+  .dongyi-client-img {
+    max-height: 38px !important;
+    max-width: 120px !important;
+  }
 }
 
 @keyframes dongyiMarqueeFwd {
