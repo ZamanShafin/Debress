@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="index.css?v=310.0">
+  <link rel="stylesheet" href="index.css?v=350.0">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
   <style>
@@ -68,14 +68,22 @@
         max-width: 120px !important;
       }
     }
+    /* DARK MODE: White vectors */
+    html[data-theme="dark"] .dongyi-client-img,
+    body[data-theme="dark"] .dongyi-client-img,
     [data-theme="dark"] .dongyi-client-img {
-      filter: brightness(0) invert(1) !important;
+      filter: none !important;
     }
+    /* LIGHT MODE: Invert white vectors to crisp deep black logos */
+    html[data-theme="light"] .dongyi-client-img,
+    body[data-theme="light"] .dongyi-client-img,
     [data-theme="light"] .dongyi-client-img {
-      filter: grayscale(100%) !important;
+      filter: invert(1) brightness(0.15) !important;
     }
+    html[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img,
+    body[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img,
     [data-theme="light"] .dongyi-client-item:hover .dongyi-client-img {
-      filter: grayscale(0%) !important;
+      filter: invert(1) brightness(0) !important;
     }
   </style>
 </head>

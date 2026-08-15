@@ -3933,6 +3933,35 @@ section.bg-white.section-padding.border-t {
   }
 }
 
+/* DARK MODE: Crisp white vectors */
+html[data-theme="dark"] .dongyi-client-img,
+body[data-theme="dark"] .dongyi-client-img,
+[data-theme="dark"] .dongyi-client-img {
+  filter: none !important;
+  opacity: 0.75 !important;
+}
+
+html[data-theme="dark"] .dongyi-client-item:hover .dongyi-client-img,
+body[data-theme="dark"] .dongyi-client-item:hover .dongyi-client-img,
+[data-theme="dark"] .dongyi-client-item:hover .dongyi-client-img {
+  opacity: 1 !important;
+}
+
+/* LIGHT MODE: Invert white vectors to crisp deep black logos */
+html[data-theme="light"] .dongyi-client-img,
+body[data-theme="light"] .dongyi-client-img,
+[data-theme="light"] .dongyi-client-img {
+  filter: invert(1) brightness(0.15) !important;
+  opacity: 0.75 !important;
+}
+
+html[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img,
+body[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img,
+[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img {
+  filter: invert(1) brightness(0) !important;
+  opacity: 1 !important;
+}
+
 @keyframes dongyiMarqueeFwd {
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }
@@ -3942,5 +3971,3 @@ section.bg-white.section-padding.border-t {
   0% { transform: translate3d(-50%, 0, 0); }
   100% { transform: translate3d(0, 0, 0); }
 }
-
-
