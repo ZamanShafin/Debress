@@ -3774,7 +3774,7 @@ img, video, svg, iframe {
 }
 
 /* ==========================================
-   CLIENT LOGOS DUAL-ROW MARQUEE SECTION (GLOBAL GIANTS)
+   CLIENT LOGOS DUAL-ROW MARQUEE SECTION (GLOBAL GIANTS - DONGYI STYLE)
    ========================================== */
 .client-marquee-section {
   width: 100% !important;
@@ -3819,12 +3819,12 @@ img, video, svg, iframe {
 .client-marquee-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 1.8rem !important;
+  gap: 24px !important;
   width: 100% !important;
   overflow: hidden !important;
   position: relative !important;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent) !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important;
 }
 
 .client-marquee-row {
@@ -3839,17 +3839,17 @@ img, video, svg, iframe {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-  gap: 4.5rem !important;
+  gap: 64px !important;
   width: max-content !important;
   will-change: transform !important;
 }
 
 .client-marquee-track.marquee-fwd {
-  animation: clientMarqueeFwd 34s linear infinite !important;
+  animation: marquee-fwd 30s linear infinite !important;
 }
 
 .client-marquee-track.marquee-rev {
-  animation: clientMarqueeRev 34s linear infinite !important;
+  animation: marquee-rev 30s linear infinite !important;
 }
 
 .client-marquee-wrapper:hover .client-marquee-track {
@@ -3857,19 +3857,15 @@ img, video, svg, iframe {
 }
 
 .client-logo-item {
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  height: 64px !important;
-  max-height: 64px !important;
-  width: 160px !important;
-  max-width: 160px !important;
-  padding: 0.4rem 0.8rem !important;
+  opacity: 0.35 !important;
   cursor: pointer !important;
-  opacity: 0.4 !important;
   background: transparent !important;
   transition: opacity 0.3s ease, transform 0.3s ease !important;
+  user-select: none !important;
 }
 
 .client-logo-item:hover {
@@ -3878,35 +3874,36 @@ img, video, svg, iframe {
 }
 
 .client-logo-img {
-  height: 48px !important;
-  max-height: 48px !important;
-  max-width: 140px !important;
+  height: 56px !important;
+  max-height: 64px !important;
+  max-width: 180px !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
   transition: all 0.3s ease !important;
   pointer-events: none !important;
+  user-select: none !important;
 }
 
 [data-theme="light"] .client-logo-img {
   filter: invert(1) !important;
 }
 
-@keyframes clientMarqueeFwd {
+@keyframes marquee-fwd {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-@keyframes clientMarqueeRev {
+@keyframes marquee-rev {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -3915,10 +3912,14 @@ img, video, svg, iframe {
     padding: 3.5rem 0 4rem 0 !important;
   }
   .client-marquee-track {
-    gap: 2.8rem !important;
+    gap: 40px !important;
   }
-  .client-logo-item {
-    height: 52px !important;
+  .client-logo-img {
+    height: 42px !important;
+    max-height: 48px !important;
+    max-width: 130px !important;
+  }
+}
     max-height: 52px !important;
     width: 120px !important;
     max-width: 120px !important;

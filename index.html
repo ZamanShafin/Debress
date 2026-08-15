@@ -11,23 +11,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="index.css?v=40.0">
+  <link rel="stylesheet" href="index.css?v=45.0">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
   <style>
-    @keyframes clientMarqueeFwd {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes marquee-fwd {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
     }
-    @keyframes clientMarqueeRev {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
+    @keyframes marquee-rev {
+      0% { transform: translate3d(-50%, 0, 0); }
+      100% { transform: translate3d(0, 0, 0); }
     }
     .marquee-fwd {
-      animation: clientMarqueeFwd 28s linear infinite !important;
+      animation: marquee-fwd 30s linear infinite !important;
     }
     .marquee-rev {
-      animation: clientMarqueeRev 28s linear infinite !important;
+      animation: marquee-rev 30s linear infinite !important;
     }
     .client-marquee-wrapper:hover .client-marquee-track {
       animation-play-state: paused !important;
@@ -274,68 +274,68 @@
       </div>
     </div>
 
-    <div class="client-marquee-wrapper" style="display: flex; flex-direction: column; gap: 1.8rem; width: 100%; overflow: hidden;">
+    <div class="client-marquee-wrapper" style="display: flex; flex-direction: column; gap: 24px; width: 100%; overflow: hidden;">
       <!-- ROW 1: FORWARD SCROLL -->
       <div class="client-marquee-row" style="display: flex; width: 100%; overflow: hidden;">
-        <div class="client-marquee-track marquee-fwd" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 4.5rem; width: max-content; animation: clientMarqueeFwd 28s linear infinite;">
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
+        <div class="client-marquee-track marquee-fwd" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 64px; width: max-content; animation: 30s linear 0s infinite normal none running marquee-fwd;">
+          <div class="client-logo-item"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
 
           <!-- DUPLICATED FOR SEAMLESS INFINITE LOOP -->
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
         </div>
       </div>
 
       <!-- ROW 2: REVERSE SCROLL -->
       <div class="client-marquee-row" style="display: flex; width: 100%; overflow: hidden;">
-        <div class="client-marquee-track marquee-rev" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 4.5rem; width: max-content; animation: clientMarqueeRev 28s linear infinite;">
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
+        <div class="client-marquee-track marquee-rev" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 64px; width: max-content; animation: 30s linear 0s infinite normal none running marquee-rev;">
+          <div class="client-logo-item"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
 
           <!-- DUPLICATED FOR SEAMLESS INFINITE LOOP -->
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
-          <div class="client-logo-item" style="height: 60px; max-height: 60px; max-width: 160px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" style="height: 44px; max-height: 48px; max-width: 140px; width: auto; object-fit: contain;" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
         </div>
       </div>
     </div>
