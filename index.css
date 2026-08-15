@@ -3866,10 +3866,17 @@ section.bg-white.section-padding.border-t {
   color: #1F2937 !important;
 }
 
+.dongyi-trust-header {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  margin-bottom: 4.5rem !important;
+}
+
 .dongyi-marquee-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 28px !important;
+  gap: 54px !important;
   width: 100% !important;
   overflow: hidden !important;
   position: relative !important;
