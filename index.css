@@ -3933,37 +3933,35 @@ section.bg-white.section-padding.border-t {
   }
 }
 
-/* DARK MODE: Monochrome gray in idle, full color on hover */
+/* DARK MODE: Pure white vectors */
 html[data-theme="dark"] .dongyi-client-img,
 body[data-theme="dark"] .dongyi-client-img,
 [data-theme="dark"] .dongyi-client-img,
 .dongyi-client-img {
-  filter: grayscale(100%) !important;
+  filter: none !important;
   opacity: 0.65 !important;
-  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
 html[data-theme="dark"] .dongyi-client-item:hover .dongyi-client-img,
 body[data-theme="dark"] .dongyi-client-item:hover .dongyi-client-img,
 [data-theme="dark"] .dongyi-client-item:hover .dongyi-client-img,
 .dongyi-client-item:hover .dongyi-client-img {
-  filter: grayscale(0%) !important;
   opacity: 1 !important;
 }
 
-/* LIGHT MODE: Invert to dark monochrome in idle, full color on hover */
+/* LIGHT MODE: Invert white vectors to solid pure black */
 html[data-theme="light"] .dongyi-client-img,
 body[data-theme="light"] .dongyi-client-img,
 [data-theme="light"] .dongyi-client-img {
-  filter: invert(1) brightness(0.15) grayscale(100%) !important;
+  filter: invert(1) brightness(0) !important;
   opacity: 0.65 !important;
-  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
 html[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img,
 body[data-theme="light"] .dongyi-client-item:hover .dongyi-client-img,
 [data-theme="light"] .dongyi-client-item:hover .dongyi-client-img {
-  filter: invert(1) brightness(0) grayscale(0%) !important;
   opacity: 1 !important;
 }
 
