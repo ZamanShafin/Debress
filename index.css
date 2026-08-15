@@ -3774,7 +3774,7 @@ img, video, svg, iframe {
 }
 
 /* ==========================================
-   CLIENT LOGOS DUAL-ROW MARQUEE SECTION (MATCHING SUSTAINABILITY STYLE)
+   CLIENT LOGOS DUAL-ROW MARQUEE SECTION (GLOBAL GIANTS)
    ========================================== */
 .client-marquee-section {
   width: 100% !important;
@@ -3786,7 +3786,7 @@ img, video, svg, iframe {
 }
 
 .client-marquee-header {
-  margin-bottom: 2.8rem !important;
+  margin-bottom: 3.5rem !important;
 }
 
 .client-marquee-tag {
@@ -3819,12 +3819,12 @@ img, video, svg, iframe {
 .client-marquee-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 1.5rem !important;
+  gap: 36px !important;
   width: 100% !important;
   overflow: hidden !important;
   position: relative !important;
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
 }
 
 .client-marquee-row {
@@ -3839,65 +3839,57 @@ img, video, svg, iframe {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-  gap: 1.8rem !important;
+  gap: 48px !important;
   width: max-content !important;
   will-change: transform !important;
 }
 
 .client-marquee-track.marquee-fwd {
-  animation: certMarqueePan 28s linear infinite !important;
+  animation: marquee-fwd 35s linear infinite !important;
 }
 
 .client-marquee-track.marquee-rev {
-  animation: certMarqueeRev 28s linear infinite !important;
+  animation: marquee-rev 35s linear infinite !important;
 }
 
 .client-marquee-wrapper:hover .client-marquee-track {
   animation-play-state: paused !important;
 }
 
-.client-logo-card {
-  flex: 0 0 auto !important;
-  flex-shrink: 0 !important;
-  width: 160px !important;
-  height: 90px !important;
-  background: #FFFFFF !important;
-  border-radius: 14px !important;
+.client-logo-item {
   display: flex !important;
-  flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 0.8rem 1.2rem !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  width: 240px !important;
+  height: 80px !important;
+  opacity: 0.75 !important;
   cursor: pointer !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  background: transparent !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+  user-select: none !important;
 }
 
-[data-theme="dark"] .client-logo-card {
-  background: #FFFFFF !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+.client-logo-item:hover {
+  opacity: 1 !important;
+  transform: scale(1.08) !important;
 }
 
-.client-logo-card:hover {
-  transform: translateY(-4px) scale(1.04) !important;
-  box-shadow: 0 10px 25px rgba(153, 204, 0, 0.25) !important;
-}
-
-.client-logo-card img {
-  max-height: 60px !important;
-  max-width: 125px !important;
-  width: auto !important;
-  height: auto !important;
+.client-logo-img {
+  width: 240px !important;
+  height: 80px !important;
   object-fit: contain !important;
   display: block !important;
+  transition: all 0.3s ease !important;
   pointer-events: none !important;
   user-select: none !important;
 }
 
-@keyframes certMarqueePan {
+[data-theme="light"] .client-logo-img {
+  filter: invert(1) !important;
+}
+
+@keyframes marquee-fwd {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -3906,7 +3898,7 @@ img, video, svg, iframe {
   }
 }
 
-@keyframes certMarqueeRev {
+@keyframes marquee-rev {
   0% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -3920,19 +3912,18 @@ img, video, svg, iframe {
     padding: 3.5rem 0 4rem 0 !important;
   }
   .client-marquee-wrapper {
-    gap: 1.2rem !important;
+    gap: 24px !important;
   }
   .client-marquee-track {
-    gap: 1.2rem !important;
+    gap: 32px !important;
   }
-  .client-logo-card {
-    width: 130px !important;
-    height: 72px !important;
-    padding: 0.5rem 0.8rem !important;
+  .client-logo-item {
+    width: 170px !important;
+    height: 56px !important;
   }
-  .client-logo-card img {
-    max-height: 48px !important;
-    max-width: 105px !important;
+  .client-logo-img {
+    width: 170px !important;
+    height: 56px !important;
   }
 }
 

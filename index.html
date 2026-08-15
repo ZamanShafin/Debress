@@ -11,26 +11,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="index.css?v=110.0">
+  <link rel="stylesheet" href="index.css?v=125.0">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
   <style>
-    @keyframes certMarqueePan {
+    @keyframes marquee-fwd {
       0% { transform: translate3d(0, 0, 0); }
       100% { transform: translate3d(-50%, 0, 0); }
     }
-    @keyframes certMarqueeRev {
+    @keyframes marquee-rev {
       0% { transform: translate3d(-50%, 0, 0); }
       100% { transform: translate3d(0, 0, 0); }
     }
     .marquee-fwd {
-      animation: certMarqueePan 28s linear infinite !important;
+      animation: marquee-fwd 35s linear infinite !important;
     }
     .marquee-rev {
-      animation: certMarqueeRev 28s linear infinite !important;
+      animation: marquee-rev 35s linear infinite !important;
     }
     .client-marquee-wrapper:hover .client-marquee-track {
       animation-play-state: paused !important;
+    }
+    [data-theme="light"] .client-logo-img {
+      filter: invert(1) !important;
     }
   </style>
 </head>
@@ -262,7 +265,7 @@
     </div>
   </section>
 
-  <!-- EDITORIAL SECTION: TRUSTED BY GLOBAL GIANTS (DUAL-ROW INFINITE MARQUEE - SUSTAINABILITY CARD STYLE) -->
+  <!-- EDITORIAL SECTION: TRUSTED BY GLOBAL GIANTS (DUAL-ROW INFINITE MARQUEE) -->
   <section class="client-marquee-section" style="width: 100%; max-width: 100vw; overflow: hidden; padding: 4.5rem 0 5.5rem 0;">
     <div class="container">
       <div class="client-marquee-header" style="margin-bottom: 2.8rem;">
@@ -271,68 +274,68 @@
       </div>
     </div>
 
-    <div class="client-marquee-wrapper" style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; overflow: hidden;">
+    <div class="client-marquee-wrapper" style="display: flex; flex-direction: column; gap: 36px; width: 100%; overflow: hidden;">
       <!-- ROW 1: FORWARD SCROLL -->
       <div class="client-marquee-row" style="display: flex; width: 100%; overflow: hidden;">
-        <div class="client-marquee-track marquee-fwd" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 1.8rem; width: max-content; animation: 28s linear 0s infinite normal none running certMarqueePan;">
-          <div class="client-logo-card"><img src="assets/Client Logo/amazon.png" alt="Amazon" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/etam.png" alt="Etam" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/La-halle.png" alt="La Halle" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/images.png" alt="Brand Partner" loading="lazy"></div>
+        <div class="client-marquee-track marquee-fwd" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 48px; width: max-content; animation: 35s linear 0s infinite normal none running marquee-fwd;">
+          <div class="client-logo-item"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
 
           <!-- DUPLICATED FOR SEAMLESS INFINITE LOOP -->
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
         </div>
       </div>
 
       <!-- ROW 2: REVERSE SCROLL -->
       <div class="client-marquee-row" style="display: flex; width: 100%; overflow: hidden;">
-        <div class="client-marquee-track marquee-rev" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 1.8rem; width: max-content; animation: 28s linear 0s infinite normal none running certMarqueeRev;">
-          <div class="client-logo-card"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/La-halle.png" alt="La Halle" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/etam.png" alt="Etam" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/amazon.png" alt="Amazon" loading="lazy"></div>
-          <div class="client-logo-card"><img src="assets/Client Logo/images.png" alt="Brand Partner" loading="lazy"></div>
+        <div class="client-marquee-track marquee-rev" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 48px; width: max-content; animation: 35s linear 0s infinite normal none running marquee-rev;">
+          <div class="client-logo-item"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
 
           <!-- DUPLICATED FOR SEAMLESS INFINITE LOOP -->
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" loading="lazy"></div>
-          <div class="client-logo-card" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/riachuelo.png" alt="Riachuelo" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/personal shop.png" alt="Personal Shop" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/ochnik.png" alt="Ochnik" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/mud.png" alt="MUD Jeans" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/sergent_major_logo.png" alt="Sergent Major" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/La-halle.png" alt="La Halle" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/fashionuk-logo-black-250.png" alt="Fashion UK" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/etam.png" alt="Etam" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/Eddie-Bauer-Logo.png" alt="Eddie Bauer" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/colins-logo.png" alt="Colin's" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/amazon.png" alt="Amazon" class="client-logo-img" loading="lazy"></div>
+          <div class="client-logo-item" aria-hidden="true"><img src="assets/Client Logo/images.png" alt="Brand Partner" class="client-logo-img" loading="lazy"></div>
         </div>
       </div>
     </div>
