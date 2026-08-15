@@ -3821,12 +3821,12 @@ img, video, svg, iframe {
 .client-marquee-wrapper {
   display: flex !important;
   flex-direction: column !important;
-  gap: 40px !important;
+  gap: 48px !important;
   width: 100% !important;
   overflow: hidden !important;
   position: relative !important;
-  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%) !important;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%) !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%) !important;
 }
 
 .client-marquee-row {
@@ -3841,7 +3841,7 @@ img, video, svg, iframe {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
-  gap: 64px !important;
+  gap: 72px !important;
   width: max-content !important;
   will-change: transform !important;
 }
@@ -3863,9 +3863,9 @@ img, video, svg, iframe {
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  height: 110px !important;
-  padding: 0 1.2rem !important;
-  opacity: 0.85 !important;
+  height: 140px !important;
+  padding: 0 1.5rem !important;
+  opacity: 0.9 !important;
   cursor: pointer !important;
   background: transparent !important;
   transition: opacity 0.3s ease, transform 0.3s ease !important;
@@ -3878,9 +3878,9 @@ img, video, svg, iframe {
 }
 
 .client-logo-img {
-  height: 85px !important;
-  max-height: 95px !important;
-  max-width: 360px !important;
+  height: 110px !important;
+  max-height: 130px !important;
+  max-width: 480px !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
@@ -3916,19 +3916,19 @@ img, video, svg, iframe {
     padding: 3.5rem 0 4rem 0 !important;
   }
   .client-marquee-wrapper {
-    gap: 24px !important;
+    gap: 28px !important;
   }
   .client-marquee-track {
-    gap: 36px !important;
+    gap: 40px !important;
   }
   .client-logo-item {
-    height: 70px !important;
-    padding: 0 0.6rem !important;
+    height: 80px !important;
+    padding: 0 0.8rem !important;
   }
   .client-logo-img {
-    height: 52px !important;
-    max-height: 60px !important;
-    max-width: 220px !important;
+    height: 64px !important;
+    max-height: 72px !important;
+    max-width: 260px !important;
   }
 }
 
