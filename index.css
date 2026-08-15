@@ -3867,9 +3867,9 @@ img, video, svg, iframe {
   max-width: 160px !important;
   padding: 0.4rem 0.8rem !important;
   cursor: pointer !important;
-  opacity: 0.35 !important;
+  opacity: 0.4 !important;
   background: transparent !important;
-  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
 
 .client-logo-item:hover {
@@ -3884,25 +3884,12 @@ img, video, svg, iframe {
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
-  filter: brightness(0) invert(1) grayscale(100%) !important;
-  mix-blend-mode: screen !important;
-  transition: all 0.35s ease !important;
+  transition: all 0.3s ease !important;
   pointer-events: none !important;
 }
 
 [data-theme="light"] .client-logo-img {
-  filter: grayscale(100%) brightness(0.2) !important;
-  mix-blend-mode: multiply !important;
-}
-
-.client-logo-item:hover .client-logo-img {
-  filter: brightness(0) invert(1) !important;
-  mix-blend-mode: screen !important;
-}
-
-[data-theme="light"] .client-logo-item:hover .client-logo-img {
-  filter: grayscale(0) brightness(1) !important;
-  mix-blend-mode: multiply !important;
+  filter: invert(1) !important;
 }
 
 @keyframes clientMarqueeFwd {
