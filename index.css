@@ -218,11 +218,11 @@ html {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-main);
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 body {
@@ -232,6 +232,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

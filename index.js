@@ -66,19 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================
-     LENIS ULTRA-SMOOTH SCROLLING SYSTEM
+     LENIS ULTRA-SMOOTH LUXURY SCROLLING ENGINE
      ========================================== */
   let lenis;
   if (typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      smoothTouch: true,
-      touchMultiplier: 2.0,
-      wheelMultiplier: 1.0
+      wheelMultiplier: 0.95,
+      smoothTouch: false,
+      touchMultiplier: 1.0,
+      infinite: false,
+      autoRaf: false
     });
 
     function raf(time) {
@@ -87,15 +89,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(raf);
 
+    // Provide globally so other scripts can access
+    window.lenis = lenis;
+
     // Anchor smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+        if (targetId === '#' || !targetId) return;
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          lenis.scrollTo(targetElement, { offset: -80 });
+          e.preventDefault();
+          lenis.scrollTo(targetElement, { offset: -80, duration: 1.5 });
         }
       });
     });
