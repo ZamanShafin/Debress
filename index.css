@@ -3902,11 +3902,11 @@ section.bg-white.section-padding.border-t {
 }
 
 .dongyi-marquee-track.marquee-fwd {
-  animation: dongyiMarqueeFwd 30s linear infinite !important;
+  animation: dongyiMarqueeFwd 50s linear infinite !important;
 }
 
 .dongyi-marquee-track.marquee-rev {
-  animation: dongyiMarqueeRev 30s linear infinite !important;
+  animation: dongyiMarqueeRev 50s linear infinite !important;
 }
 
 .dongyi-marquee-wrapper:hover .dongyi-marquee-track {
