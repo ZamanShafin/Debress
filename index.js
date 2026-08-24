@@ -251,6 +251,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================
+     CATEGORY IMAGE LIGHTBOX PREVIEW MODAL
+     ========================================== */
+  const lightboxModal = document.getElementById('category-lightbox-modal');
+  const lightboxImg = document.getElementById('category-lightbox-img');
+  const lightboxClose = document.getElementById('category-lightbox-close');
+  const lightboxBackdrop = document.getElementById('category-lightbox-backdrop');
+  const photoCards = document.querySelectorAll('.product-photo-card');
+
+  if (lightboxModal && lightboxImg) {
+    photoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const fullImgSrc = card.getAttribute('data-full-img') || card.querySelector('.product-photo-img')?.getAttribute('src');
+        if (fullImgSrc) {
+          lightboxImg.src = fullImgSrc;
+          lightboxModal.classList.add('active');
+          lightboxModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        if (!lightboxModal.classList.contains('active')) {
+          lightboxImg.src = '';
+        }
+      }, 300);
+    };
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  /* ==========================================
      INTERACTIVE POP-UP MODAL SYSTEM (SERVICES)
      ========================================== */
   const interactiveElements = document.querySelectorAll('.service-interactive-card');
