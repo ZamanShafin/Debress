@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="index.css?v=1010.0">
+  <link rel="stylesheet" href="index.css?v=1020.0">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
 </head>
@@ -366,19 +366,36 @@
     </div>
   </footer>
 
-  <!-- FULLSCREEN LUXURY CATEGORY PHOTO LIGHTBOX MODAL -->
+  <!-- FULLSCREEN LUXURY CATEGORY PHOTO LIGHTBOX SLIDER MODAL -->
   <div id="category-lightbox-modal" class="category-lightbox-modal" aria-hidden="true" role="dialog">
     <div class="category-lightbox-backdrop" id="category-lightbox-backdrop"></div>
     <div class="category-lightbox-container">
       <button class="category-lightbox-close" id="category-lightbox-close" aria-label="Close Image Preview">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
+
+      <!-- PREV BUTTON -->
+      <button class="category-lightbox-nav category-lightbox-prev" id="category-lightbox-prev" aria-label="Previous Image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <!-- IMAGE CONTENT -->
       <div class="category-lightbox-content">
         <img id="category-lightbox-img" src="" alt="Enlarged Product View" class="category-lightbox-img">
+      </div>
+
+      <!-- NEXT BUTTON -->
+      <button class="category-lightbox-nav category-lightbox-next" id="category-lightbox-next" aria-label="Next Image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <!-- COUNTER / PAGINATION PILL -->
+      <div class="category-lightbox-counter" id="category-lightbox-counter">
+        <span id="lightbox-current-index">1</span> / <span id="lightbox-total-count">3</span>
       </div>
     </div>
   </div>
 
-  <script src="index.js?v=1010.0"></script>
+  <script src="index.js?v=1020.0"></script>
 </body>
 </html>
