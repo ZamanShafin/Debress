@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================
-     CATEGORY IMAGE LIGHTBOX SLIDER MODAL
+     CATEGORY IMAGE LIGHTBOX SLIDER MODAL (ZERO LAG)
      ========================================== */
   const lightboxModal = document.getElementById('category-lightbox-modal');
   const lightboxImg = document.getElementById('category-lightbox-img');
@@ -265,22 +265,39 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightboxModal && lightboxImg) {
     let currentGalleryImages = [];
     let currentImgIndex = 0;
+    let isTransitioning = false;
 
-    const updateLightboxImage = (index) => {
-      if (!currentGalleryImages.length) return;
+    // Immediately preload all gallery images into browser cache
+    const photoCards = document.querySelectorAll('.product-photo-card');
+    photoCards.forEach(card => {
+      const src = card.getAttribute('data-full-img') || card.querySelector('.product-photo-img')?.getAttribute('src');
+      if (src) {
+        const pImg = new Image();
+        pImg.src = src;
+      }
+    });
+
+    const updateLightboxImage = (index, direction = 'next') => {
+      if (!currentGalleryImages.length || isTransitioning) return;
+      isTransitioning = true;
       currentImgIndex = (index + currentGalleryImages.length) % currentGalleryImages.length;
       
-      lightboxImg.classList.add('fade-out');
+      const animClass = direction === 'next' ? 'slide-next' : 'slide-prev';
+      lightboxImg.classList.remove('slide-next', 'slide-prev');
+      
+      // Force reflow and apply instant transition
+      void lightboxImg.offsetWidth;
+      lightboxImg.src = currentGalleryImages[currentImgIndex];
+      lightboxImg.classList.add(animClass);
+      
+      if (currentIdxSpan) currentIdxSpan.textContent = currentImgIndex + 1;
+      if (totalCountSpan) totalCountSpan.textContent = currentGalleryImages.length;
+
       setTimeout(() => {
-        lightboxImg.src = currentGalleryImages[currentImgIndex];
-        if (currentIdxSpan) currentIdxSpan.textContent = currentImgIndex + 1;
-        if (totalCountSpan) totalCountSpan.textContent = currentGalleryImages.length;
-        lightboxImg.classList.remove('fade-out');
-      }, 150);
+        isTransitioning = false;
+      }, 180);
     };
 
-    // Attach click listeners to all photo cards
-    const photoCards = document.querySelectorAll('.product-photo-card');
     photoCards.forEach(card => {
       card.addEventListener('click', () => {
         const parentDiv = card.closest('.portfolio-division-block') || document.querySelector('.portfolio-division-block.active');
@@ -294,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const foundIdx = currentGalleryImages.indexOf(clickedSrc);
         currentImgIndex = foundIdx !== -1 ? foundIdx : 0;
 
+        lightboxImg.classList.remove('slide-next', 'slide-prev');
         lightboxImg.src = currentGalleryImages[currentImgIndex];
         if (currentIdxSpan) currentIdxSpan.textContent = currentImgIndex + 1;
         if (totalCountSpan) totalCountSpan.textContent = currentGalleryImages.length;
@@ -311,14 +329,15 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         if (!lightboxModal.classList.contains('active')) {
           lightboxImg.src = '';
+          lightboxImg.classList.remove('slide-next', 'slide-prev');
         }
-      }, 300);
+      }, 250);
     };
 
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
     if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
-    if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); updateLightboxImage(currentImgIndex - 1); });
-    if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); updateLightboxImage(currentImgIndex + 1); });
+    if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); updateLightboxImage(currentImgIndex - 1, 'prev'); });
+    if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); updateLightboxImage(currentImgIndex + 1, 'next'); });
 
     // Keyboard navigation (Arrow keys + Esc)
     document.addEventListener('keydown', (e) => {
@@ -326,9 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') {
         closeLightbox();
       } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        updateLightboxImage(currentImgIndex + 1);
+        updateLightboxImage(currentImgIndex + 1, 'next');
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        updateLightboxImage(currentImgIndex - 1);
+        updateLightboxImage(currentImgIndex - 1, 'prev');
       }
     });
 
@@ -341,10 +360,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightboxModal.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 50) {
-        updateLightboxImage(currentImgIndex + 1); // Swipe left -> Next
-      } else if (touchEndX - touchStartX > 50) {
-        updateLightboxImage(currentImgIndex - 1); // Swipe right -> Prev
+      if (touchStartX - touchEndX > 40) {
+        updateLightboxImage(currentImgIndex + 1, 'next'); // Swipe left -> Next
+      } else if (touchEndX - touchStartX > 40) {
+        updateLightboxImage(currentImgIndex - 1, 'prev'); // Swipe right -> Prev
       }
     }, { passive: true });
   }
