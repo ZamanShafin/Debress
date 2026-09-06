@@ -2064,10 +2064,10 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
 }
 
 .product-photo-info {
-  padding: 1.2rem 1.4rem 1.3rem;
+  padding: 1.15rem 1.4rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  justify-content: center;
   background: var(--bg-card);
   border-top: 1px solid var(--border-light);
   flex-grow: 1;
