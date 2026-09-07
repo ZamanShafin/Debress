@@ -3015,8 +3015,22 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   .contact-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .contact-table th, .contact-table td { padding: 1rem 0.8rem; font-size: 0.85rem; }
   
-  .category-tabs-container { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.5rem; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
-  .category-tab-btn { flex-shrink: 0; font-size: 0.78rem; padding: 0.6rem 1rem; }
+  .category-tabs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 0.55rem;
+    overflow-x: visible;
+    padding: 0 0.5rem;
+  }
+  .category-tab-btn {
+    flex-shrink: 1;
+    font-size: 0.74rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 6px;
+    letter-spacing: 0.06em;
+  }
 }
 
 /* 5. SMALL MOBILE PHONES (<= 480px) */
@@ -3094,6 +3108,7 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
     gap: 0.4rem !important;
     min-height: 48px !important;
   }
+}
   
 /* CONTACT DIRECTORY CARDS MOBILE OPTIMIZATION */
 .contact-dir-card {
@@ -3138,27 +3153,33 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
 }
 
 /* ==========================================
-   PRODUCT CATEGORIES SECTION MOBILE RESPONSIVENESS FIX
+   PRODUCT CATEGORIES SECTION RESPONSIVENESS (PC FORMAT ON MOBILE/TABLET)
    ========================================== */
 .category-tabs-container {
   display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
   gap: 0.6rem !important;
-  max-width: 100% !important;
-  margin: 0 auto 3rem auto !important;
-  padding: 0.5rem 0 !important;
+  max-width: 1280px !important;
+  margin: 0 auto 3.5rem auto !important;
+  padding: 0.5rem 1rem !important;
+  overflow-x: visible !important;
 }
 
 @media (max-width: 1024px) {
   .category-tabs-container {
-    overflow-x: auto !important;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding: 0.5rem 1rem 1rem 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    scrollbar-width: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.55rem 0.6rem !important;
+    overflow-x: visible !important;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    scroll-snap-type: none !important;
+    -webkit-overflow-scrolling: auto !important;
   }
   
   .category-tabs-container::-webkit-scrollbar {
@@ -3166,12 +3187,13 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   }
 
   .category-tab-btn {
-    flex-shrink: 0 !important;
-    scroll-snap-align: start !important;
-    font-size: 0.78rem !important;
-    padding: 0.65rem 1.1rem !important;
-    white-space: nowrap !important;
-    border-radius: 100px !important;
+    flex-shrink: 1 !important;
+    scroll-snap-align: none !important;
+    font-size: 0.76rem !important;
+    padding: 0.65rem 1.15rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    border-radius: 6px !important;
   }
 
   .division-header-wrapper {
@@ -3190,7 +3212,11 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
     line-height: 1.6 !important;
   }
 
-  .portfolio-photo-grid,
+  .portfolio-photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
   .category-items-grid,
   .portfolio-division-block .grid-3,
   .portfolio-division-block .grid-4 {
@@ -3205,17 +3231,47 @@ body[data-theme="dark"] .vertical-nav-links .nav-link.active .nav-text,
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .category-tabs-container {
+    gap: 0.5rem 0.5rem !important;
+    padding: 0 0.5rem !important;
+    margin: 0 auto 2rem auto !important;
+  }
+
   .category-tab-btn {
-    font-size: 0.72rem !important;
+    font-size: 0.74rem !important;
     padding: 0.55rem 0.9rem !important;
+    border-radius: 6px !important;
     letter-spacing: 0.05em !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-photo-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-tabs-container {
+    gap: 0.45rem 0.45rem !important;
+    padding: 0 0.25rem 1.2rem 0.25rem !important;
+  }
+
+  .category-tab-btn {
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 6px !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1.25 !important;
   }
 
   .division-header-wrapper {
     padding-left: 0.8rem !important;
     margin-bottom: 1.5rem !important;
   }
+}
 
 /* ==========================================
    TEXBRIDGE CERTIFICATIONS PAN MARQUEE (THEME-ADAPTIVE & LIGHT-MODE CLEAN)
@@ -3964,6 +4020,10 @@ img, video, svg, iframe {
 
   .sustainability-card-left {
     padding: 1.4rem 1rem !important;
+  }
+}
+
+/* ==========================================
    SCROLL REVEAL FADE-IN ANIMATION ENGINE
    ========================================== */
 .fade-in-on-scroll {
