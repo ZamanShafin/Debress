@@ -243,6 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
       divisionBlocks.forEach(block => {
         if (block.id === targetDivId) {
           block.classList.add('active');
+          // Instantly trigger image loading for the newly selected category
+          block.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            img.loading = 'eager';
+          });
         } else {
           block.classList.remove('active');
         }
@@ -267,15 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentImgIndex = 0;
     let isTransitioning = false;
 
-    // Immediately preload all gallery images into browser cache
-    const photoCards = document.querySelectorAll('.product-photo-card');
-    photoCards.forEach(card => {
-      const src = card.getAttribute('data-full-img') || card.querySelector('.product-photo-img')?.getAttribute('src');
-      if (src) {
-        const pImg = new Image();
-        pImg.src = src;
-      }
-    });
+    // Preload next and previous images on demand when lightbox is in use
+    const preloadLightboxNeighbors = (idx) => {
+      if (!currentGalleryImages.length) return;
+      const nextIdx = (idx + 1) % currentGalleryImages.length;
+      const prevIdx = (idx - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+      const nextImg = new Image(); nextImg.src = currentGalleryImages[nextIdx];
+      const prevImg = new Image(); prevImg.src = currentGalleryImages[prevIdx];
+    };
 
     const updateLightboxImage = (index, direction = 'next') => {
       if (!currentGalleryImages.length || isTransitioning) return;
@@ -292,6 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (currentIdxSpan) currentIdxSpan.textContent = currentImgIndex + 1;
       if (totalCountSpan) totalCountSpan.textContent = currentGalleryImages.length;
+
+      preloadLightboxNeighbors(currentImgIndex);
 
       setTimeout(() => {
         isTransitioning = false;
@@ -319,6 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxModal.classList.add('active');
         lightboxModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        preloadLightboxNeighbors(currentImgIndex);
       });
     });
 
